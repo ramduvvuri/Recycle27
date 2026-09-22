@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Accommodation" description="Add on-campus and nearby stay options for participants." columns={["Name","Type","Status"]}/>}

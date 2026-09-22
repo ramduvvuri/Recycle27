@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Programme" description="Add programme days, sessions, locations and speakers." columns={["Session","Day","Status"]}/>}

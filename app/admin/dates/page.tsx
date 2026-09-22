@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Important dates" description="Manage milestones used in the dates page and homepage countdown." columns={["Label","Date","Status"]} rows={[["Conference dates","12–14 May 2027","Active"]]}/>}

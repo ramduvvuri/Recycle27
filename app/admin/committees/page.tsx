@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Committees" description="Manage organising, scientific and advisory committee members." columns={["Name","Committee","Status"]}/>}

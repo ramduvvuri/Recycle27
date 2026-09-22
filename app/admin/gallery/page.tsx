@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Gallery" description="Organise published conference photography and featured images." columns={["Title","Category","Status"]}/>}

@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Announcements" description="Publish time-sensitive updates across the conference website." columns={["Title","Message","Status"]} rows={[["Abstract submission update","Awaiting confirmation","Draft"]]}/>}

@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="FAQs" description="Keep participant answers current and easy to find." columns={["Question","Category","Status"]}/>}

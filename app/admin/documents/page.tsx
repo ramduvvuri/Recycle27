@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Documents" description="Maintain brochure, template and programme document links." columns={["Title","Type","Status"]}/>}

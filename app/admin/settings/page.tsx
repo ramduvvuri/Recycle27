@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Site settings" description="Configure conference identity, contact details, external links and maps." columns={["Setting","Value","Status"]} rows={[["Conference name","RECYCLE27","Active"],["Conference start date","12 May 2027","Active"]]}/>}

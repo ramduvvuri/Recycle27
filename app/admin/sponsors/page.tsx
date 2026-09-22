@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Sponsors" description="Manage sponsor details, tiers, logos and links." columns={["Name","Tier","Status"]}/>}

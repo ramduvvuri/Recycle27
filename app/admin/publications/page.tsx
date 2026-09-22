@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Publications" description="Manage publication opportunities and awards information." columns={["Title","Type","Status"]}/>}

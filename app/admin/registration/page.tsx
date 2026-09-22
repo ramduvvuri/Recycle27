@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Registration" description="Set attendee categories, fees and availability." columns={["Category","Fee","Status"]}/>}

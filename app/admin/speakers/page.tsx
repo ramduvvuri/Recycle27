@@ -1,0 +1,1 @@
+import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Speakers" description="Create and order speaker profiles, photos and session topics." columns={["Name","Type","Status"]}/>}
