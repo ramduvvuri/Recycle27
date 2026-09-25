@@ -1,1 +1,15 @@
-import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Registration" description="Set attendee categories, fees and availability." columns={["Category","Fee","Status"]}/>}
+import { requireAdmin } from "@/lib/admin/auth";
+import { AdminShell } from "@/components/admin/AdminShell";
+import { adminGetAll } from "@/lib/supabase/queries";
+import { RegistrationClient } from "@/components/admin/sections/RegistrationClient";
+import type { RegistrationCategory } from "@/types/database";
+
+export default async function Page() {
+  const user = await requireAdmin();
+  const categories = await adminGetAll<RegistrationCategory>("registration_categories");
+  return (
+    <AdminShell email={user.email ?? "Administrator"}>
+      <RegistrationClient categories={categories} />
+    </AdminShell>
+  );
+}

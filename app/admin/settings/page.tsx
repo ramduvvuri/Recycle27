@@ -1,1 +1,14 @@
-import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Site settings" description="Configure conference identity, contact details, external links and maps." columns={["Setting","Value","Status"]} rows={[["Conference name","RECYCLE27","Active"],["Conference start date","12 May 2027","Active"]]}/>}
+import { requireAdmin } from "@/lib/admin/auth";
+import { AdminShell } from "@/components/admin/AdminShell";
+import { getSiteSettings } from "@/lib/supabase/queries";
+import { SettingsClient } from "@/components/admin/sections/SettingsClient";
+
+export default async function Page() {
+  const user = await requireAdmin();
+  const settings = await getSiteSettings();
+  return (
+    <AdminShell email={user.email ?? "Administrator"}>
+      <SettingsClient settings={settings} />
+    </AdminShell>
+  );
+}

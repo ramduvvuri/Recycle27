@@ -4,7 +4,7 @@ import React from "react";
 interface SectionWrapperProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   theme?: "light" | "white" | "dark" | "dark-secondary" | "transparent";
-  spacing?: "normal" | "compact" | "none";
+  spacing?: "normal" | "compact" | "generous" | "editorial" | "cards" | "moderate" | "none";
   className?: string;
   containerClassName?: string;
 }
@@ -28,6 +28,10 @@ export function SectionWrapper({
   const spacings = {
     normal: "py-20 md:py-28 lg:py-32",
     compact: "py-12 md:py-16",
+    moderate: "py-16 md:py-20 lg:py-24",
+    cards: "py-20 md:py-28 lg:py-32",
+    editorial: "py-20 md:py-28 lg:py-32",
+    generous: "py-24 md:py-32 lg:py-36",
     none: "py-0",
   };
 

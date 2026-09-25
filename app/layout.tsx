@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { RegistrationModalProvider } from "@/contexts/RegistrationModalContext";
 
 const playfairDisplay = Playfair_Display({
   weight: ["400", "500"],
@@ -33,9 +34,11 @@ export default function RootLayout({
       className={`${playfairDisplay.variable} ${inter.variable}`}
     >
       <body className="font-body bg-soft-bg text-dark-text min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1 flex flex-col">{children}</main>
-        <Footer />
+        <RegistrationModalProvider>
+          <Navbar />
+          <main className="flex-1 flex flex-col">{children}</main>
+          <Footer />
+        </RegistrationModalProvider>
       </body>
     </html>
   );

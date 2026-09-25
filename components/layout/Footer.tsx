@@ -1,85 +1,61 @@
 import Link from "next/link";
-import { MapPin, Send, Video, CircleUserRound } from "lucide-react";
+import { CircleUserRound, MapPin, Video } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-primary-dark text-light-text py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          {/* Column 1 */}
-          <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-baseline">
-              <span className="font-display text-[28px] md:text-[32px] tracking-wide">
-                RECYCLE
-              </span>
-              <span className="font-display text-[28px] md:text-[32px] text-primary-emerald">
-                27
-              </span>
+    <footer className="border-t border-dark-border bg-primary-dark py-8 text-light-text md:py-10">
+      <div className="mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-[1.5fr_1fr_1fr_.5fr] md:items-start md:px-8 lg:px-12">
+        <div>
+          <Link href="/" className="inline-flex items-baseline font-display text-3xl tracking-wide md:text-4xl">
+            <span className="text-light-text">RECYCLE</span>
+            <span className="text-primary-emerald">27</span>
+          </Link>
+          <p className="mt-2 text-sm leading-5 text-light-text/80">
+            International Conference on Sustainable<br />
+            Waste Management and Circular Economy
+          </p>
+        </div>
+        <div className="flex items-start gap-3 text-light-text/80">
+          <MapPin size={20} className="mt-0.5 shrink-0 text-primary-emerald" />
+          <p className="text-sm leading-6">
+            IIT Guwahati<br />
+            Guwahati, Assam 781039, India
+          </p>
+        </div>
+        <div className="text-sm text-light-text/80">
+          <div className="flex items-center gap-4">
+            <a href="#" aria-label="LinkedIn" className="hover:text-primary-emerald transition-colors">
+              <CircleUserRound size={20} />
+            </a>
+            <a href="#" aria-label="X" className="text-sm font-medium hover:text-primary-emerald transition-colors">
+              𝕏
+            </a>
+            <a href="#" aria-label="YouTube" className="hover:text-primary-emerald transition-colors">
+              <Video size={21} />
+            </a>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+            <Link href="/contact" className="hover:text-primary-emerald transition-colors">
+              Contact
             </Link>
-            <p className="font-body text-[14px] text-light-text/80 leading-[1.6]">
-              International Conference on Sustainable<br />
-              Waste Management and Circular Economy
-            </p>
-          </div>
-
-          {/* Column 2 */}
-          <div className="flex flex-col gap-4 lg:pt-2">
-            <div className="flex items-start gap-3 text-light-text/80">
-              <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
-              <p className="font-body text-[14px] leading-[1.6]">
-                IIT Guwahati<br />
-                Guwahati, Assam 781039, India
-              </p>
-            </div>
-          </div>
-
-          {/* Column 3 */}
-          <div className="flex flex-col gap-6 lg:pt-2">
-            <div className="flex items-center gap-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors" aria-label="LinkedIn">
-                <CircleUserRound className="w-5 h-5" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors" aria-label="Twitter">
-                <Send className="w-5 h-5" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors" aria-label="YouTube">
-                <Video className="w-5 h-5" />
-              </a>
-            </div>
-            <div className="w-12 h-[1px] bg-dark-border" />
-            <div className="flex flex-col gap-2">
-              <Link href="/contact" className="font-body text-[14px] text-light-text/80 hover:text-primary-emerald transition-colors w-fit">
-                Contact
-              </Link>
-              <Link href="#" className="font-body text-[14px] text-light-text/80 hover:text-primary-emerald transition-colors w-fit">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="font-body text-[14px] text-light-text/80 hover:text-primary-emerald transition-colors w-fit">
-                Sitemap
-              </Link>
-            </div>
-          </div>
-
-          {/* Column 4 */}
-          <div className="flex flex-col items-start lg:items-end lg:pt-2">
-            <p className="font-body text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-light-text/40 text-left lg:text-right leading-[1.8]">
-              A CLEANER<br />
-              TOMORROW<br />
-              TOGETHER
-            </p>
+            <Link href="#" className="hover:text-primary-emerald transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="hover:text-primary-emerald transition-colors">
+              Sitemap
+            </Link>
           </div>
         </div>
-
-        <div className="divider-dark mb-8" />
-        
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-body text-[13px] text-light-text/60">
-            © 2027 RECYCLE27. All rights reserved.
-          </p>
-          <p className="font-body text-[13px] text-light-text/40">
-            Hosted by IIT Guwahati
-          </p>
+        <div className="border-l border-light-text/30 pl-6 text-[11px] uppercase leading-[1.7] tracking-[0.2em] text-light-text/50 md:justify-self-end">
+          PEOPLE<br />
+          IDEAS<br />
+          SOLUTIONS<br />
+          A CLEANER<br />
+          TOMORROW
         </div>
+      </div>
+      <div className="mx-auto mt-6 max-w-7xl px-5 text-center text-[11px] text-light-text/40 md:px-8 lg:px-12">
+        © 2027 RECYCLE27. All rights reserved.
       </div>
     </footer>
   );

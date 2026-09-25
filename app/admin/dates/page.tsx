@@ -1,1 +1,15 @@
-import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Important dates" description="Manage milestones used in the dates page and homepage countdown." columns={["Label","Date","Status"]} rows={[["Conference dates","12–14 May 2027","Active"]]}/>}
+import { requireAdmin } from "@/lib/admin/auth";
+import { AdminShell } from "@/components/admin/AdminShell";
+import { adminGetAll } from "@/lib/supabase/queries";
+import { ImportantDatesClient } from "@/components/admin/sections/ImportantDatesClient";
+import type { ImportantDate } from "@/types/database";
+
+export default async function Page() {
+  const user = await requireAdmin();
+  const dates = await adminGetAll<ImportantDate>("important_dates");
+  return (
+    <AdminShell email={user.email ?? "Administrator"}>
+      <ImportantDatesClient dates={dates} />
+    </AdminShell>
+  );
+}

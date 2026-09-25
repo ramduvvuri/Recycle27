@@ -2,7 +2,14 @@ import "server-only";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 
-export const isSupabaseConfigured = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+const _url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+const _key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
+// Only treat as configured when real (non-placeholder) credentials are provided
+export const isSupabaseConfigured =
+  Boolean(_url && _key) &&
+  !_url.includes("mock") &&
+  !_key.startsWith("mock") &&
+  _key.length > 20;
 
 export async function requireAdmin() {
   if (!isSupabaseConfigured) redirect("/admin/login?error=configuration");

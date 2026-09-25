@@ -1,1 +1,15 @@
-import { AdminPage } from "@/components/admin/AdminPage"; export default function Page(){return <AdminPage title="Accommodation" description="Add on-campus and nearby stay options for participants." columns={["Name","Type","Status"]}/>}
+import { requireAdmin } from "@/lib/admin/auth";
+import { AdminShell } from "@/components/admin/AdminShell";
+import { adminGetAll } from "@/lib/supabase/queries";
+import { AccommodationClient } from "@/components/admin/sections/AccommodationClient";
+import type { AccommodationOption } from "@/types/database";
+
+export default async function Page() {
+  const user = await requireAdmin();
+  const options = await adminGetAll<AccommodationOption>("accommodation_options");
+  return (
+    <AdminShell email={user.email ?? "Administrator"}>
+      <AccommodationClient options={options} />
+    </AdminShell>
+  );
+}

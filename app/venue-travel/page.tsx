@@ -1,2 +1,5 @@
-import { ConferencePage } from "@/components/shared/ConferencePage";
-export default function Page(){ return <ConferencePage kind="venue"/> }
+import { VenueTravelPage } from "@/components/shared/VenueTravelPage";
+
+export default function Page() {
+  return <VenueTravelPage />;
+}

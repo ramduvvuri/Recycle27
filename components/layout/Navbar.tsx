@@ -6,12 +6,14 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { useRegistrationModal } from "@/contexts/RegistrationModalContext";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Themes", href: "/themes" },
-  { label: "Speakers & Committees", href: "/speakers" },
+  { label: "Speakers", href: "/speakers" },
+  { label: "Committees", href: "/committees" },
   { label: "Programme", href: "/programme" },
   { label: "Registration", href: "/registration" },
 ];
@@ -33,6 +35,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const pathname = usePathname();
+  const { openModal } = useRegistrationModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,29 +51,29 @@ export function Navbar() {
         className={cn(
           "fixed top-0 inset-x-0 z-50 transition-all duration-250 ease-out",
           isScrolled
-            ? "bg-primary-dark/95 backdrop-blur-[8px] shadow-[0_1px_0_rgba(0,0,0,0.12)] py-3"
-            : "bg-primary-dark/90 py-3"
+            ? "bg-primary-dark/95 backdrop-blur-[8px] shadow-[0_1px_0_rgba(0,0,0,0.12)] py-5"
+            : "bg-primary-dark/95 py-5"
         )}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex items-center justify-between">
           <Link href="/" className="relative z-10 flex items-baseline">
-            <span className="font-body text-[20px] font-semibold tracking-[0.04em] text-light-text md:text-[22px]">
+            <span className="font-display text-[24px] md:text-[26px] tracking-wide text-light-text">
               RECYCLE
             </span>
-            <span className="font-body text-[20px] font-semibold tracking-[0.04em] text-primary-emerald md:text-[22px]">
+            <span className="font-display text-[24px] md:text-[26px] tracking-wide text-primary-emerald">
               27
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-7">
-            <ul className="flex items-center gap-7">
+          <div className="hidden lg:flex items-center gap-10">
+            <ul className="flex items-center gap-10">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className={cn(
-                      "font-body text-[14px] font-medium transition-colors relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[2px] after:bg-primary-emerald after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left",
+                      "font-body text-[15px] font-medium transition-colors relative after:absolute after:bottom-[-6px] after:left-0 after:w-full after:h-[2px] after:bg-primary-emerald after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left",
                       pathname === link.href
                         ? "text-primary-emerald after:scale-x-100 after:origin-left"
                         : "text-light-text hover:text-primary-emerald"
@@ -83,7 +86,7 @@ export function Navbar() {
               <li className="relative group">
                 <button
                   className={cn(
-                    "flex items-center gap-1 font-body text-[14px] font-medium transition-colors cursor-pointer",
+                    "flex items-center gap-1 font-body text-[15px] font-medium transition-colors cursor-pointer",
                     MORE_LINKS.some((l) => pathname === l.href)
                       ? "text-primary-emerald"
                       : "text-light-text hover:text-primary-emerald"
@@ -113,7 +116,7 @@ export function Navbar() {
                 </div>
               </li>
             </ul>
-            <Button href="/registration" showArrow>
+            <Button modalTrigger showArrow className="px-7 py-3.5 text-[15px]">
               Register Now
             </Button>
           </div>
@@ -141,7 +144,7 @@ export function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "text-[24px] font-display",
+                    "text-[22px] font-display",
                     pathname === link.href ? "text-primary-emerald" : "text-primary-dark"
                   )}
                 >
@@ -152,7 +155,7 @@ export function Navbar() {
             <li>
               <button
                 onClick={() => setIsMoreOpen(!isMoreOpen)}
-                className="flex items-center justify-between w-full text-[24px] font-display text-primary-dark"
+                className="flex items-center justify-between w-full text-[22px] font-display text-primary-dark"
               >
                 More Links
                 <ChevronDown
@@ -166,7 +169,7 @@ export function Navbar() {
                       <Link
                         href={link.href}
                         className={cn(
-                          "text-[18px] font-body",
+                          "text-[16px] font-body",
                           pathname === link.href
                             ? "text-primary-emerald font-medium"
                             : "text-secondary-text"
@@ -181,7 +184,7 @@ export function Navbar() {
             </li>
           </ul>
           <div className="mt-12">
-            <Button href="/registration" className="w-full" showArrow>
+            <Button modalTrigger className="w-full" showArrow>
               Register Now
             </Button>
           </div>

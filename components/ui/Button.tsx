@@ -1,13 +1,17 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useRegistrationModal } from "@/contexts/RegistrationModalContext";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "secondary-light" | "icon";
   href?: string;
   icon?: React.ReactNode;
   showArrow?: boolean;
+  modalTrigger?: boolean;
 }
 
 export function Button({
@@ -16,9 +20,11 @@ export function Button({
   href,
   icon,
   showArrow = false,
+  modalTrigger = false,
   children,
   ...props
 }: ButtonProps) {
+  const { openModal } = useRegistrationModal();
   const baseStyles = "inline-flex items-center justify-center font-body text-[14px] font-medium transition-all duration-200";
   
   const variants = {
@@ -37,6 +43,25 @@ export function Button({
       )}
     </>
   );
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (modalTrigger) {
+      e.preventDefault();
+      openModal();
+    }
+  };
+
+  if (modalTrigger) {
+    return (
+      <button
+        className={cn(baseStyles, variants[variant], "group", className)}
+        onClick={handleClick}
+        {...props}
+      >
+        {content}
+      </button>
+    );
+  }
 
   if (href) {
     return (
