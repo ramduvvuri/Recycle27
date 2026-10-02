@@ -1,10 +1,18 @@
 /**
  * Curated hero and banner imagery for all RECYCLE27 internal pages.
- * 
+ *
+ * IMAGE FAMILIES:
+ *   WASTE PROCESSING  — sorting, baling, conveyor, MRF
+ *   TREATMENT/RECOVERY — wastewater, composting, anaerobic digestion, WtE
+ *   RESEARCH/LAB      — environmental lab, water analysis, microplastics
+ *   CONFERENCE/PEOPLE — keynote, audience, poster session, academic hall
+ *   IITG/CAMPUS       — IIT Guwahati architecture, campus, accommodation
+ *
  * Rules:
- * - Each image combines the specific PAGE TOPIC with the RECYCLE27 environmental / sustainable context.
- * - Realistic, editorial, high-resolution Unsplash photography suitable with the dark-green overlay.
- * - Home page is NOT part of this configuration.
+ *   - Local assets preferred; Unsplash for pages where local asset is
+ *     not yet available and the subject is appropriate.
+ *   - Home page hero is NOT part of this config (managed in page.tsx).
+ *   - All images are used behind a white/dark overlay in PageHero.
  */
 
 export type PageHeroKey =
@@ -25,50 +33,55 @@ export type PageHeroKey =
   | "contact";
 
 export const HERO_IMAGES: Record<PageHeroKey, string> = {
-  // About: Prestigious academic campus architecture and lush green surroundings (IIT Guwahati context)
-  about: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=85",
+  // About: Waste sorting at a material recovery facility — communicates the
+  // conference subject immediately.
+  about: "/images/waste/mrf-sorting-01.jpg",
 
-  // Themes: Renewable energy, wind turbines across rolling green hills — sustainable circular future
-  themes: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2000&q=85",
+  // Themes: Wastewater treatment clarifier basins — engineering infrastructure
+  // representing the breadth of RECYCLE themes.
+  themes: "/images/waste/wastewater-clarifier-01.jpg",
 
-  // Speakers: Keynote speaker presenting on stage at a darkened academic conference hall
-  speakers: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=2000&q=85",
+  // Speakers: Academic conference hall with keynote presenter and full audience.
+  speakers: "/images/conference/conference-hall-01.jpg",
 
-  // Committees: Interdisciplinary researchers and faculty collaborating at a symposium table
-  committees: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=85",
+  // Committees: Researchers collaborating at an academic symposium/workshop.
+  committees: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=2000&q=85",
 
-  // Programme: Conference auditorium filled with attentive delegates during technical sessions
-  programme: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=2000&q=85",
+  // Programme: Conference auditorium with attentive delegates.
+  programme: "/images/heroes/programme.jpg",
 
-  // Registration: Delegates gathering and arriving at the conference venue
+  // Registration: Delegates gathering at conference venue entrance/foyer.
   registration: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=2000&q=85",
 
-  // Call for Abstracts: Scholarly research papers, academic manuscripts, and scientific study desk
-  abstracts: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=2000&q=85",
+  // Call for Abstracts: Environmental research laboratory — researcher
+  // examining water samples, analytical instruments.
+  abstracts: "/images/research/env-lab-01.jpg",
 
-  // Publications & Awards: Prestigious academic library with scholarly journals, volumes, and awards
-  publications: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=2000&q=85",
+  // Important Dates: Resource recovery / recycling facility — bales of
+  // recovered materials communicate circular economy context.
+  dates: "/images/heroes/imp-dates.jpg",
 
-  // Venue & Travel: Serene campus lake and landscape of IIT Guwahati along the Brahmaputra
-  venue: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=2000&q=85",
+  // Venue & Travel: IIT Guwahati campus building and greenery.
+  venue: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=85",
 
-  // Accommodation: Peaceful, welcoming hotel / university guest residence with natural calm ambience
+  // Accommodation: Calm university guesthouse / campus residence.
   accommodation: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=85",
 
-  // Sponsors: Clean modern sustainable architecture representing industry partnership and green infrastructure
-  sponsors: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85",
+  // Publications & Awards: Scientific papers and academic research material.
+  publications: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=2000&q=85",
 
-  // Gallery: Active conference engagement, attendees and vibrant event moments
+  // Sponsors: Industrial waste-processing / recycling facility showing
+  // industrial partnership context.
+  sponsors: "/images/heroes/sponsorship.jpg",
+
+  // Gallery: Active academic conference — audience, networking, poster session.
   gallery: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=2000&q=85",
 
-  // FAQs: Conference inquiry, knowledge exchange and guidance in a university setting
-  faqs: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2000&q=85",
+  // FAQs: Environmental lab — subdued, credible academic context.
+  faqs: "/images/heroes/faq.jpg",
 
-  // Contact: Professional dialogue, inquiry communication and conference secretariat consultation
-  contact: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2000&q=85",
-
-  // Important Dates: Planning calendar and schedule notebook surrounded by natural greenery
-  dates: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=2000&q=85",
+  // Contact: IIT Guwahati campus architecture — institutional and welcoming.
+  contact: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=2000&q=85",
 };
 
 export function getHeroImage(key: PageHeroKey): string {

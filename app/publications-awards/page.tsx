@@ -1,15 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
+
 import { FileText, Download, Search, Award, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { HeroSideText } from "@/components/ui/HeroSideText";
+
 import { FinalCTA } from "@/components/shared/FinalCTA";
 
-const heroImage = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=2000&q=85";
 
 export default function PublicationsAwardsPage() {
   return (

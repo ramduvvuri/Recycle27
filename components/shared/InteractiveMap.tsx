@@ -8,7 +8,8 @@ import {
   Search, 
   Compass, 
   Bus, 
-  Car, 
+  Car,
+  Map as MapIcon,
   Plus, 
   Minus, 
   X, 
@@ -413,30 +414,34 @@ export function InteractiveMap() {
         )}
 
         {/* ========================================================
-            SATELLITE TOGGLE THUMBNAIL (Bottom Left)
+            MAP & SATELLITE CONTROLS (Top Right)
         ======================================================== */}
-        <button
-          onClick={toggleMapType}
-          className="absolute bottom-4 left-4 z-20 flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg border-2 border-white shadow-lg transition-transform hover:scale-105 pointer-events-auto"
-          title={mapType === "roadmap" ? "Switch to Satellite" : "Switch to Map"}
-        >
-          <Image
-            src={
-              mapType === "roadmap"
-                ? "https://images.unsplash.com/photo-1524666041070-9d87656c25b3?auto=format&fit=crop&w=120&q=80"
-                : "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=120&q=80"
-            }
-            alt="Toggle view"
-            fill
-            sizes="48px"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-            <span className="text-[9px] font-semibold text-white tracking-wider uppercase">
-              {mapType === "roadmap" ? "Satellite" : "Map"}
-            </span>
-          </div>
-        </button>
+        <div className="absolute top-4 right-4 sm:right-12 z-20 flex overflow-hidden rounded-md bg-white shadow-md border border-black/10 pointer-events-auto">
+          <button
+            onClick={() => {
+              setMapType("roadmap");
+              if (mapInstance) mapInstance.setMapTypeId("roadmap");
+            }}
+            className={`flex items-center gap-1.5 px-3 py-2 text-[11px] font-medium transition-colors ${
+              mapType === "roadmap" ? "bg-[#173d31] text-white" : "text-dark-text hover:bg-soft-bg"
+            }`}
+          >
+            <MapIcon size={13} />
+            <span>Map</span>
+          </button>
+          <button
+            onClick={() => {
+              setMapType("satellite");
+              if (mapInstance) mapInstance.setMapTypeId("satellite");
+            }}
+            className={`flex items-center gap-1.5 px-3 py-2 text-[11px] font-medium transition-colors ${
+              mapType === "satellite" ? "bg-[#173d31] text-white" : "text-dark-text hover:bg-soft-bg"
+            }`}
+          >
+            <Layers size={13} />
+            <span>Satellite</span>
+          </button>
+        </div>
 
         {/* ========================================================
             ZOOM CONTROLS (Bottom Right)

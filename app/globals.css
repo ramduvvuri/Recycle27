@@ -1,18 +1,31 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary-dark: #071710;
+  /* Premium Semantic Tokens */
+  --color-recycle-cream: #F8F7F0;
+  --color-recycle-cream-soft: #FAF9F5;
+  --color-recycle-sage: #ECF0E6;
+  --color-recycle-sage-dark: #DDE8DC;
+  --color-recycle-green: #0C5A3D;
+  --color-recycle-green-dark: #0b3d2c;
+  --color-recycle-green-deep: #072a1e;
+  --color-recycle-text: #113224;
+  --color-recycle-text-muted: #56615D;
+  
+  /* Existing components mapping (preserving for backward compatibility) */
+  --color-primary-dark: var(--color-recycle-text);
   --color-secondary-dark: #0D241B;
-  --color-deep-emerald: #145C3C;
-  --color-primary-emerald: #1E8A5A;
-  --color-muted-green: #8FA69A;
-  --color-warm-cream: #F2EFE6;
-  --color-soft-bg: #FAF9F5;
-  --color-dark-text: #111715;
-  --color-secondary-text: #56615D;
+  --color-deep-emerald: var(--color-recycle-green-dark);
+  --color-primary-emerald: var(--color-recycle-green);
+  --color-muted-green: var(--color-recycle-sage-dark);
+  --color-warm-cream: var(--color-recycle-cream);
+  --color-soft-bg: var(--color-recycle-cream-soft);
+  --color-dark-text: var(--color-recycle-text);
+  --color-secondary-text: var(--color-recycle-text-muted);
   --color-light-text: #F5F3ED;
   --color-light-border: #D9DED8;
   --color-dark-border: #294137;
+  
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
@@ -35,4 +48,47 @@ body:has([data-admin]) > nav, body:has([data-admin]) > footer { display: none; }
   input, textarea, select { @apply border border-light-border rounded-lg px-4 py-3 font-body text-[14px] text-dark-text bg-white; }
   input:focus, textarea:focus, select:focus { @apply outline-none border-primary-emerald ring-3 ring-primary-emerald/15; }
   label { @apply block text-[13px] font-medium text-dark-text mb-1.5; }
+
+  /* Smooth anchor scrolling — respects prefers-reduced-motion */
+  html { scroll-behavior: smooth; }
+
+  /* Button tactile press */
+  button:active, a[role="button"]:active { transform: scale(0.98); }
 }
+
+/* ── Reduced Motion ─────────────────────────────────────────────────────── */
+/* Kill Framer Motion and CSS transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+/* ── Premium Scrollbar (Desktop Only) ────────────────────────────────────── */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(250, 249, 242, 0.3);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #0C5A3D;
+    border-radius: 8px;
+    border: 2px solid #F8F7F0; /* matches body bg for inner padding effect */
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #073d28;
+    border-width: 1px; /* feels thicker on hover */
+  }
+}
+

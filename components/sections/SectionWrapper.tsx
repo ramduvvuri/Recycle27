@@ -26,12 +26,12 @@ export function SectionWrapper({
   };
 
   const spacings = {
-    normal: "py-20 md:py-28 lg:py-32",
-    compact: "py-12 md:py-16",
-    moderate: "py-16 md:py-20 lg:py-24",
-    cards: "py-20 md:py-28 lg:py-32",
-    editorial: "py-20 md:py-28 lg:py-32",
-    generous: "py-24 md:py-32 lg:py-36",
+    normal: "py-14 md:py-16 lg:py-20",
+    compact: "py-10 md:py-12",
+    moderate: "py-12 md:py-14",
+    cards: "py-12 md:py-16",
+    editorial: "py-12 md:py-16 lg:py-20",
+    generous: "py-16 md:py-20 lg:py-24",
     none: "py-0",
   };
 
@@ -40,7 +40,7 @@ export function SectionWrapper({
       className={cn(themes[theme], spacings[spacing], className)}
       {...props}
     >
-      <div className={cn("max-w-7xl mx-auto px-5 md:px-8 lg:px-12 w-full", containerClassName)}>
+      <div className={cn("max-w-[1400px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 w-full", containerClassName)}>
         {children}
       </div>
     </section>

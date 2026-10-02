@@ -16,17 +16,17 @@ const stayOptions = [
   {
     title: "On-Campus Hostels",
     description: "Affordable and convenient accommodation within the IIT Guwahati campus.",
-    image: "photo-1562774053-701939374585",
+    image: "photo-1555854877-bab0e564b8d5",
   },
   {
     title: "Guest Houses",
     description: "Comfortable guest house facilities for guests and attendees.",
-    image: "photo-1503428593586-e225b39bddfe",
+    image: "photo-1522771739844-6a9f6d5f14af",
   },
   {
     title: "Nearby Hotels",
     description: "Selected hotels in Guwahati offering special conference rates.",
-    image: "photo-1551836022-d5d88e9218df",
+    image: "photo-1566073771259-6a8506099945",
   },
 ];
 

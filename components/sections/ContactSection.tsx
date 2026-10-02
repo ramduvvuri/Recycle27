@@ -4,19 +4,21 @@ import { useActionState } from "react";
 import { submitContactInquiry } from "@/lib/public/actions";
 import { Mail, Phone, MapPin, CalendarDays, Users, FileText, Handshake, MessageSquare, CheckCircle, AlertCircle } from "lucide-react";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
-import type { ActionResult } from "@/types/database";
+import type { ActionResult } from "@/types";
+import { contactInfo } from "@/data/contact";
 
+// Transform centralized contact info into section format
 const contactDetails = [
-  { Icon: Mail, label: "Email", value: "recycle27@iitg.ac.in" },
+  { Icon: Mail, label: "Email", value: contactInfo.emails.join("\n") },
   {
     Icon: Phone,
     label: "Phone",
-    value: "+91 361 258 3000\n(Extension will be updated soon)",
+    value: contactInfo.phones.join("\n"),
   },
   {
     Icon: MapPin,
     label: "Address",
-    value: "Indian Institute of Technology Guwahati\nGuwahati, Assam 781039, India",
+    value: `${contactInfo.address.line1}\n${contactInfo.address.line2}\n${contactInfo.address.city}, ${contactInfo.address.state} ${contactInfo.address.pincode}, ${contactInfo.address.country}`,
   },
   {
     Icon: CalendarDays,

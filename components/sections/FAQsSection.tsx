@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
 import { FAQList } from "@/components/shared/FAQList";
+import { faqs } from "@/data/faqs";
 
 const categories = [
   "All Questions",
@@ -11,21 +12,6 @@ const categories = [
   "Travel & Accommodation",
   "Publications & Awards",
   "Sponsorship",
-];
-
-const faqItems = [
-  {
-    question: "What is RECYCLE27?",
-    answer: "RECYCLE27 is an international conference on sustainable waste management and circular economy.",
-  },
-  {
-    question: "When and where will the conference be held?",
-    answer: "The conference is planned for 12–14 May 2027 at IIT Guwahati.",
-  },
-  {
-    question: "Who can participate?",
-    answer: "Researchers, practitioners, policy makers and students are welcome.",
-  },
 ];
 
 const faqGroups = [
@@ -70,7 +56,7 @@ export function FAQsSection() {
           {faqGroups.map((group) => (
             <div key={group}>
               <h2 className="mb-3 font-display text-2xl">{group}</h2>
-              <FAQList items={faqItems} />
+              <FAQList items={faqs.filter(f => f.category === group) || []} />
             </div>
           ))}
         </div>

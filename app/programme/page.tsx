@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { CalendarDays, MapPin, Download, Calendar } from "lucide-react";
+import { Download, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
@@ -11,7 +10,6 @@ import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { FinalCTA } from "@/components/shared/FinalCTA";
 import { cn } from "@/lib/utils";
 
-const heroImage = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=2000&q=85";
 
 const programmeDays = [
   { id: 1, label: "Day 1", date: "12 May 2027" },

@@ -1,6 +1,6 @@
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { MockupPageSections } from "@/components/shared/MockupPageSections";
+import { AbstractsSection } from "@/components/sections/AbstractsSection";
 import { FinalCTA } from "@/components/shared/FinalCTA";
 
 export default function Page() {
@@ -14,7 +14,7 @@ export default function Page() {
         sideText={["PEOPLE", "IDEAS", "SOLUTIONS", "A CLEANER", "TOMORROW"]}
       />
       <Breadcrumb items={[{ label: "Call for Abstracts" }]} />
-      <MockupPageSections kind="abstracts" />
+      <AbstractsSection />
       <FinalCTA />
     </>
   );

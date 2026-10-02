@@ -1,9 +1,7 @@
-import Image from "next/image";
 import { FileText, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
-import { sponsorTiers } from "@/lib/content/sponsors";
 
 const benefits = ["Brand Visibility", "Engagement", "Social Impact", "Long-term Partnerships"];
 
@@ -42,29 +40,20 @@ export function SponsorsSection() {
           ))}
         </div>
 
-        {/* Sponsor tiers */}
-        <h2 className="mt-12 font-display text-5xl md:text-6xl">Our Valued Partners</h2>
-        {sponsorTiers.map(({ title, sponsors, cols }) => (
-          <div key={title}>
-            <h3 className="mt-8 text-lg font-medium text-secondary-text">{title}</h3>
-            <div className={`mt-6 grid gap-4 ${cols}`}>
-              {sponsors.map(({ name, logo }) => (
-                <div
-                  key={name}
-                  className="flex h-32 items-center justify-center border border-light-border bg-white p-6"
-                >
-                  <Image
-                    src={logo}
-                    alt={name}
-                    width={200}
-                    height={80}
-                    className="max-h-full w-auto object-contain"
-                  />
-                </div>
-              ))}
-            </div>
+        {/* Coming soon state */}
+        <div className="mt-16 sm:mt-24 rounded-2xl border border-light-border bg-soft-bg p-12 text-center">
+          <h2 className="font-display text-3xl md:text-4xl text-dark-text mb-4">
+            Sponsors Coming Soon
+          </h2>
+          <p className="text-secondary-text max-w-lg mx-auto">
+            Our sponsorship partners will be announced shortly. If you are interested in partnering with RECYCLE27, please download our sponsorship brochure or contact our team.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <Button href="/contact" variant="primary">
+              Contact Organizing Team
+            </Button>
           </div>
-        ))}
+        </div>
       </SectionWrapper>
     </>
   );

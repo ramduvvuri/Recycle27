@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Leaf } from "lucide-react";
+import { ScrollParallax } from "@/components/motion/ScrollParallax";
 
-const target = new Date("2027-05-12T09:00:00+05:30").getTime();
+const target = new Date("2027-05-20T00:00:00+05:30").getTime();
 
 type TimeRemaining = {
   days: number;
@@ -23,10 +25,6 @@ function getTimeRemaining(): TimeRemaining {
   };
 }
 
-/*
- * Static initial value prevents hydration mismatch.
- * The actual countdown is calculated after hydration.
- */
 const initialValue: TimeRemaining = {
   days: 0,
   hours: 0,
@@ -38,12 +36,11 @@ export function Countdown() {
   const [value, setValue] = useState<TimeRemaining>(initialValue);
 
   useEffect(() => {
+     
     setValue(getTimeRemaining());
-
     const timer = window.setInterval(() => {
       setValue(getTimeRemaining());
     }, 1000);
-
     return () => window.clearInterval(timer);
   }, []);
 
@@ -51,7 +48,7 @@ export function Countdown() {
     {
       key: "days",
       label: "Days",
-      value: String(value.days).padStart(3, "0"),
+      value: String(value.days),
     },
     {
       key: "hours",
@@ -71,68 +68,79 @@ export function Countdown() {
   ];
 
   return (
-    <section className="w-full border-y border-black/75 bg-[#f5f3ee]">
-      <div className="mx-auto flex w-full max-w-[1440px] items-stretch">
-        {/* =========================
-            COUNTDOWN
-        ========================== */}
-        <div className="flex min-w-0 flex-1 items-center px-10 py-12 sm:px-12 sm:py-14 lg:px-16">
-          <div className="w-full">
-            <p className="mb-6 text-[13px] font-medium tracking-[-0.01em] text-[#111] sm:text-[15px]">
+    <section id="countdown" className="w-full relative bg-[#093522] h-auto lg:h-[84px] flex flex-col lg:flex-row overflow-hidden">
+      
+      {/* DESKTOP BACKGROUND LAYER */}
+      <div className="hidden lg:block absolute inset-0 z-0">
+        {/* Left Pale Green */}
+        <div className="absolute left-0 top-0 bottom-0 w-[68%] bg-[#E8EAE3]" />
+        
+        {/* The Smooth S-Curve Divider */}
+        <svg 
+          className="absolute left-[68%] top-0 h-[84px] w-[120px] text-[#E8EAE3]" 
+          viewBox="0 0 100 100" 
+          preserveAspectRatio="none"
+        >
+          <path fill="currentColor" d="M0,0 L100,0 C60,0 40,100 0,100 Z" />
+        </svg>
+      </div>
+
+      {/* MOBILE BACKGROUND */}
+      <div className="lg:hidden absolute inset-0 z-0 bg-[#E8EAE3]" />
+
+      {/* CONTENT CONTAINER */}
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 md:px-8 lg:px-10 xl:px-12 h-full flex flex-col lg:flex-row items-center justify-between py-6 lg:py-0">
+        
+        {/* LEFT COMPONENT - HEADING & TIMER */}
+        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-14 w-full lg:w-auto">
+          
+          {/* HEADING */}
+          <div className="flex flex-col items-center lg:items-start shrink-0">
+            <p className="text-[8px] md:text-[11px] font-bold uppercase tracking-[0.1em] text-[#365143] mb-[3px]">
               Conference Begins In
             </p>
+            <div className="h-[2px] w-[26px] bg-[#8FA196]" />
+          </div>
 
-            <div className="flex items-center">
-              {segments.map((segment, index) => (
-                <div
-                  key={segment.key}
-                  className="flex items-center"
-                >
-                  <div className="w-[120px] text-center sm:w-[140px] md:w-[160px]">
-                    <div className="font-display text-[48px] font-medium leading-none tracking-[-0.05em] text-[#111] sm:text-[54px] md:text-[60px]">
-                      {segment.value}
-                    </div>
-
-                    <div className="mt-3 text-[10px] font-medium uppercase tracking-[0.10em] text-[#111]/70 sm:text-[11px] md:text-[12px]">
-                      {segment.label}
-                    </div>
+          {/* TIMER VALUES */}
+          <div className="flex items-center gap-4 md:gap-5 lg:gap-6">
+            {segments.map((segment, index) => (
+              <div key={segment.key} className="flex items-center">
+                <div className="flex flex-col items-center w-[46px] md:w-[50px] lg:w-[54px]">
+                  <div className="font-display text-[22px] md:text-[30px] lg:text-[32px] font-medium leading-[1] text-[#123123] mb-[2px]">
+                    {segment.value}
                   </div>
-
-                  {index < segments.length - 1 && (
-                    <div className="mx-2 h-16 w-px bg-black/15 sm:mx-4 sm:h-20" />
-                  )}
+                  <div className="text-[8px] md:text-[11px] font-medium text-[#73887B]">
+                    {segment.label}
+                  </div>
                 </div>
-              ))}
-            </div>
+
+                {index < segments.length - 1 && (
+                  <div className="mx-2 md:mx-3 lg:mx-4 h-8 w-px bg-[#123123]/15" />
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* =========================
-            LEAF
-        ========================== */}
-        <div className="relative hidden h-[210px] w-[230px] shrink-0 overflow-hidden sm:block">
-          <Image
-            src="/images/leaf.png"
-            alt=""
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="230px"
-          />
-        </div>
-
-        {/* =========================
-            QUOTE
-        ========================== */}
-        <div className="flex w-[360px] shrink-0 items-center px-10 sm:w-[390px] sm:px-12 md:w-[420px]">
-          <div className="border-l-[2px] border-primary-emerald pl-7">
-            <p className="font-display text-[24px] italic leading-[1.2] tracking-[-0.025em] text-[#111] sm:text-[26px] md:text-[28px]">
-              “Towards a circular and sustainable future.”
+        {/* RIGHT COMPONENT - LEAF & QUOTE */}
+        <div className="hidden lg:flex items-center justify-end gap-4 lg:gap-5 mt-8 lg:mt-0 shrink-0 relative z-20 w-full lg:w-auto">
+          <ScrollParallax speed={-0.1} max={8}>
+            <Leaf 
+              className="text-[#6C8A79] rotate-[-15deg]" 
+              size={24} 
+              strokeWidth={1.5} 
+            />
+          </ScrollParallax>
+          <ScrollParallax speed={0.06} max={5}>
+            <p className="font-display text-[14px] md:text-[15px] lg:text-[16px] leading-[1.25] text-[#E8EAE3] mr-2 lg:mr-0">
+              <span className="block">Towards a</span>
+              <span className="block">Circular and</span>
+              <span className="block">Resource-Efficient Future</span>
             </p>
-
-            <div className="mt-6 h-px w-10 bg-black/45" />
-          </div>
+          </ScrollParallax>
         </div>
+
       </div>
     </section>
   );

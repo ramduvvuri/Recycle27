@@ -4,6 +4,8 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { RegistrationModalProvider } from "@/contexts/RegistrationModalContext";
+import { PageTransition } from "@/components/motion/PageTransition";
+import { ReadingProgress } from "@/components/shared/ReadingProgress";
 
 const playfairDisplay = Playfair_Display({
   weight: ["400", "500"],
@@ -35,8 +37,11 @@ export default function RootLayout({
     >
       <body className="font-body bg-soft-bg text-dark-text min-h-screen flex flex-col">
         <RegistrationModalProvider>
+          <ReadingProgress />
           <Navbar />
-          <main className="flex-1 flex flex-col">{children}</main>
+          <main className="flex-1 flex flex-col">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
         </RegistrationModalProvider>
       </body>
