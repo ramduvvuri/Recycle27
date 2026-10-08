@@ -49,7 +49,7 @@ export const registrationFees: RegistrationFee[] = [
   },
   {
     id: "indian-student",
-    category: "MTech & BTech Students",
+    category: "MTech and BTech Students",
     amount: "INR 3500/-",
     gst: "18% GST",
     display: "INR 3500/- + 18% GST",
@@ -58,7 +58,7 @@ export const registrationFees: RegistrationFee[] = [
   // ── Foreign Nationals ─────────────────────────────────────────────────────
   {
     id: "foreign",
-    category: "Foreign Nationals",
+    category: "All Categories",
     amount: "150 USD",
     display: "150 USD",
     nationality: "foreign",
@@ -76,8 +76,8 @@ export const foreignFees = registrationFees.filter(
  * What is included in the registration fee.
  */
 export const registrationIncludes: string[] = [
-  "Access to all technical sessions",
-  "Conference kit and meals",
-  "Networking opportunities",
-  "Participation certificate",
+  "access to technical sessions",
+  "conference kit",
+  "lunches/refreshments",
+  "conference proceedings",
 ];

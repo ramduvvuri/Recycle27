@@ -72,7 +72,7 @@ export const advisoryCommittee = {
     { id: "nat-10", name: "Prof. K.D. Yadav", affiliation: "SVNIT Surat" },
     { id: "nat-11", name: "Dr. Maulin. P. Shah", affiliation: "Enviro Technology Limited, Gujarat" },
     { id: "nat-12", name: "Dr. Mayur Shirish Jain", affiliation: "IIT Indore" },
-    { id: "nat-13", name: "Dr. Izharul Haq", affiliation: "Manipal University" }
+    { id: "nat-13", name: "Dr. Izharul Haq", affiliation: "Dr. B. Lal Institute of Biotechnology" }
   ]
 };
 

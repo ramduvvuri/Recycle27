@@ -18,10 +18,7 @@ export interface ContactInfo {
 
 export const contactInfo: ContactInfo = {
   phones: [
-    "0361 258 2431",
-    "9535533933",
-    "9083110128",
-    "8670388688",
+    "+91 9535533933",
   ],
   emails: [
     "recycle2k27@iitg.ac.in",

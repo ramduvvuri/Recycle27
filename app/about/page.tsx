@@ -51,10 +51,7 @@ export default function AboutPage() {
                   <h2 className="font-display text-4xl leading-tight md:text-5xl text-dark-text mt-3 mb-5">About RECYCLE27</h2>
                   <div className="space-y-4">
                     <p className="text-[14.5px] leading-relaxed text-secondary-text">
-                      RECYCLE27 is an international conference on sustainable waste management and circular economy, bringing together researchers, industry experts, policymakers and students from across the globe. The conference aims to foster collaboration, knowledge exchange and actionable outcomes to address pressing challenges of waste management and to build a cleaner, more resilient future.
-                    </p>
-                    <p className="text-[14.5px] leading-relaxed text-secondary-text">
-                      Through technical sessions, keynote talks, panel discussions and networking opportunities, RECYCLE27 explores innovative solutions, policies and practices that accelerate the transition toward a circular and sustainable society.
+                      Starting off as a symposium in 2012, a Waste Management Research Group (WMRG) IIT Guwahati initiative, Recycle gradually grew into an international conference in just a few years. Recycle 2027 would provide an excellent platform for discussing and sharing ideas, methods, and approaches for effective waste management, emphasizing the core issues of solid waste management, water, and wastewater.
                     </p>
                   </div>
                   <ButtonLink href="/themes">View Conference Themes</ButtonLink>
@@ -86,7 +83,7 @@ export default function AboutPage() {
                   <EyebrowLabel theme="dark" label="Indian Institute of Technology Guwahati" />
                   <h2 className="font-display text-4xl md:text-5xl text-light-text mt-3 mb-5">About IIT Guwahati</h2>
                   <p className="text-[14.5px] leading-relaxed text-light-text/80 mb-8">
-                    Indian Institute of Technology Guwahati (IITG) is one of the premier institutions of national importance in India, known for its excellence in education, research and innovation. Set in a serene campus along the banks of the Brahmaputra, IITG provides a unique environment for interdisciplinary learning and research.
+                    Indian Institute of Technology Guwahati (IITG), established in 1994, is one of India's leading institutes of technology and excellence. At present, the institute has eleven departments, nine centres, and five schools of interdisciplinary academic centres. IITG has a world-class infrastructure and has state-of-the-art scientific and engineering instruments for carrying out advanced research. IIT’s campus is on a sprawling 704.25 acres plot on the north bank of the river Brahmaputra, around 20 km from the heart of Guwahati city.
                   </p>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 pt-6 border-t border-light-text/10">
@@ -138,7 +135,7 @@ export default function AboutPage() {
                   <EyebrowLabel label="Waste Management Research Group" />
                   <h2 className="font-display text-4xl md:text-5xl text-dark-text mt-3 mb-5">About WMRG</h2>
                   <p className="text-[14.5px] leading-relaxed text-secondary-text mb-8">
-                    The Waste Management Research Group (WMRG) at IIT Guwahati works towards advancing research and practice in sustainable waste management, resource recovery and circular economy solutions. Through interdisciplinary research, industry collaboration and policy engagement, WMRG strives to create a meaningful impact on environmental sustainability and public health.
+                    The Waste Management Research Group (WMRG) at the Indian Institute of Technology Guwahati, led by Prof. Ajay Kalamdhad and Dr. Meena Khwairakpam, is dedicated to advancing sustainable solutions in environmental engineering and waste management. The group's research spans composting, anaerobic digestion, pyrolysis, landfill management, water and wastewater treatment, and other emerging areas of environmental sustainability and resource recovery. Beyond research and academic pursuits, WMRG is more than just a research group; it is a close-knit family where members learn, collaborate, support one another, and grow together, striving to contribute meaningful and practical solutions for a more sustainable future.
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4 pt-6 border-t border-dark-border/10">

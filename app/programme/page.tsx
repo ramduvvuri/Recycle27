@@ -12,22 +12,14 @@ import { cn } from "@/lib/utils";
 
 
 const programmeDays = [
-  { id: 1, label: "Day 1", date: "12 May 2027" },
-  { id: 2, label: "Day 2", date: "13 May 2027" },
-  { id: 3, label: "Day 3", date: "14 May 2027" }
+  { id: 1, label: "Day 1", date: "20th May 2027" },
+  { id: 2, label: "Day 2", date: "21st May 2027" }
 ];
 
-const programmeItems = [
-  { time: "09:00 – 10:00", title: "Registration & Welcome Tea", subtitle: "", venue: "Main Foyer" },
-  { time: "10:00 – 11:00", title: "Inaugural Session", subtitle: "Welcome Address, Conference Overview", venue: "Auditorium" },
-  { time: "11:00 – 12:00", title: "Keynote Talk 1", subtitle: "Prof. Maria Gonzalez", venue: "Auditorium" },
-  { time: "12:00 – 13:00", title: "Keynote Talk 2", subtitle: "Prof. Kenji Tanaka", venue: "Auditorium" },
-  { time: "13:00 – 14:00", title: "Lunch Break", subtitle: "", venue: "Dining Hall" },
-  { time: "14:00 – 15:30", title: "Technical Session 1", subtitle: "Waste Management and Resource Recovery", venue: "Hall A" },
-  { time: "15:30 – 16:00", title: "Tea Break", subtitle: "", venue: "Main Foyer" },
-  { time: "16:00 – 17:30", title: "Panel Discussion", subtitle: "Policy, Governance and Social Impact", venue: "Auditorium" },
-  { time: "18:00 – 19:30", title: "Welcome Reception", subtitle: "", venue: "IITG Guest House" }
-];
+const daySummaries: Record<number, string> = {
+  1: "Inauguration, Keynote Addresses, Technical Sessions, Cultural Evening & Welcome Gala Dinner.",
+  2: "Plenary Lectures, Parallel Technical Sessions, Poster Sessions, Valedictory Function, and Award Distribution."
+};
 
 export default function ProgrammePage() {
   const [activeDay, setActiveDay] = useState(1);
@@ -58,8 +50,8 @@ export default function ProgrammePage() {
               Programme
             </h2>
             <p className="mt-6 text-sm leading-7 text-secondary-text max-w-2xl mx-auto">
-              A three-day programme featuring keynote talks, technical sessions,
-              panel discussions, workshops and networking opportunities.
+              A two-day programme featuring keynote talks, technical sessions,
+              and networking opportunities.
             </p>
           </div>
 
@@ -87,26 +79,23 @@ export default function ProgrammePage() {
             ))}
           </div>
 
-          {/* Programme Timeline */}
-          <div className="space-y-4 mb-8">
-            {programmeItems.map((item, index) => (
-              <div key={index} className="flex gap-4">
-                <div className="flex-shrink-0 w-24 text-sm text-secondary-text pt-2">
-                  {item.time}
-                </div>
-                <div className="flex-1 border-l-2 border-primary-emerald pl-4">
-                  <div className="bg-soft-bg rounded-lg p-5">
-                    <h4 className="font-display text-lg text-dark-text">{item.title}</h4>
-                    {item.subtitle && (
-                      <p className="text-sm text-secondary-text mt-1">{item.subtitle}</p>
-                    )}
-                  </div>
-                </div>
-                <div className="flex-shrink-0 w-32 text-sm text-secondary-text pt-2 text-right">
-                  {item.venue}
-                </div>
+          <div className="bg-soft-bg rounded-lg p-8 text-center mb-8 border border-light-border">
+            <h3 className="font-display text-2xl text-dark-text mb-4">
+              {programmeDays.find(d => d.id === activeDay)?.label} Overview
+            </h3>
+            <p className="text-secondary-text text-lg leading-relaxed">
+              {daySummaries[activeDay]}
+            </p>
+            <div className="mt-8 space-y-4">
+              <div className="p-4 bg-white rounded-md border border-light-border">
+                <span className="font-semibold text-dark-text">Technical Sessions: </span>
+                <span className="text-secondary-text">Will be updated soon</span>
               </div>
-            ))}
+              <div className="p-4 bg-white rounded-md border border-light-border">
+                <span className="font-semibold text-dark-text">Plenary Sessions: </span>
+                <span className="text-secondary-text">Will be updated soon</span>
+              </div>
+            </div>
           </div>
 
           {/* Programme CTA Buttons */}

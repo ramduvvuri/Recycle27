@@ -132,7 +132,7 @@ export default function VenueTravelPage() {
                 From Guwahati Airport
               </h3>
               <p className="mt-2 text-xs sm:text-sm leading-6 text-secondary-text">
-                The Lokpriya Gopinath Bordoloi International Airport (GAU) is about 20 km from the campus. Taxis and app-based cabs are easily available.
+                Lokpriya Gopinath Bordoloi International Airport (GAU), Guwahati is 22-25 km from the campus.
               </p>
             </div>
             <div className="mt-6 pt-3 border-t border-light-border/60">
@@ -152,7 +152,7 @@ export default function VenueTravelPage() {
                 From Guwahati Railway Station
               </h3>
               <p className="mt-2 text-xs sm:text-sm leading-6 text-secondary-text">
-                Guwahati Railway Station is approximately 20 km from IITG. Prepaid taxis and ride-hailing services are available outside the station.
+                Guwahati Railway Station (GHY) and Kamakhya Railway Station (KYQ).
               </p>
             </div>
             <div className="mt-6 pt-3 border-t border-light-border/60">
@@ -172,7 +172,7 @@ export default function VenueTravelPage() {
                 From Guwahati City
               </h3>
               <p className="mt-2 text-xs sm:text-sm leading-6 text-secondary-text">
-                IIT Guwahati is well connected by road from all parts of the city. Regular buses, cabs and auto services are available.
+                The IIT Guwahati campus is spread over the north bank of the Brahmaputra River, located around 20 km from the heart of Guwahati city.
               </p>
             </div>
             <div className="mt-6 pt-3 border-t border-light-border/60">
@@ -224,78 +224,8 @@ export default function VenueTravelPage() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Card 1: Kaziranga National Park */}
-          <article className="flex items-center gap-4 rounded-xl border border-light-border bg-white p-4 shadow-sm transition-transform hover:-translate-y-0.5">
-            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-lg bg-soft-bg">
-              <Image
-                src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=300&q=80"
-                alt="Kaziranga National Park wildlife"
-                fill
-                sizes="96px"
-                className="object-cover"
-              />
-            </div>
-            <div className="min-w-0 flex-1">
-              <h3 className="font-semibold text-sm text-dark-text truncate">
-                Kaziranga National Park
-              </h3>
-              <p className="text-xs text-secondary-text/80 mt-0.5">
-                Wildlife • Nature
-              </p>
-              <span className="text-[11px] text-secondary-text/60 mt-3 block">
-                Details will be updated soon
-              </span>
-            </div>
-          </article>
-
-          {/* Card 2: Umananda Temple */}
-          <article className="flex items-center gap-4 rounded-xl border border-light-border bg-white p-4 shadow-sm transition-transform hover:-translate-y-0.5">
-            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-lg bg-soft-bg">
-              <Image
-                src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=300&q=80"
-                alt="Umananda Temple island on Brahmaputra"
-                fill
-                sizes="96px"
-                className="object-cover"
-              />
-            </div>
-            <div className="min-w-0 flex-1">
-              <h3 className="font-semibold text-sm text-dark-text truncate">
-                Umananda Temple
-              </h3>
-              <p className="text-xs text-secondary-text/80 mt-0.5">
-                Heritage • Culture
-              </p>
-              <span className="text-[11px] text-secondary-text/60 mt-3 block">
-                Details will be updated soon
-              </span>
-            </div>
-          </article>
-
-          {/* Card 3: Kamakhya Temple */}
-          <article className="flex items-center gap-4 rounded-xl border border-light-border bg-white p-4 shadow-sm transition-transform hover:-translate-y-0.5">
-            <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-lg bg-soft-bg">
-              <Image
-                src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=300&q=80"
-                alt="Kamakhya Temple heritage"
-                fill
-                sizes="96px"
-                className="object-cover"
-              />
-            </div>
-            <div className="min-w-0 flex-1">
-              <h3 className="font-semibold text-sm text-dark-text truncate">
-                Kamakhya Temple
-              </h3>
-              <p className="text-xs text-secondary-text/80 mt-0.5">
-                Spiritual • Heritage
-              </p>
-              <span className="text-[11px] text-secondary-text/60 mt-3 block">
-                Details will be updated soon
-              </span>
-            </div>
-          </article>
+        <div className="mt-10 p-8 border border-light-border bg-white rounded-xl shadow-sm text-center">
+          <p className="text-secondary-text text-lg">Will be updated soon</p>
         </div>
       </SectionWrapper>
 

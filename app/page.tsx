@@ -239,10 +239,10 @@ export default function Home() {
               {/* Body copy */}
               <div className="mt-4 space-y-2.5 text-[12.5px] md:text-[13px] text-recycle-text/78 leading-[1.58] max-w-[400px]">
                 <p>
-                  After five successful international conferences, ReCYCLE 2027 (6th International Conference on Waste Management) brings together national and international researchers, scientists, academicians, industry professionals and policymakers to discuss and learn about the latest innovative ideas and technologies for waste management.
+                  After five successful editions, Recycle 2027 is back, bringing together national and international researchers, scientists, and academics to discuss and learn about the latest innovative ideas and technologies in waste management.
                 </p>
                 <p>
-                  ReCYCLE 2027 aims to inculcate awareness about safe practices and the latest technologies for managing and treating solid and liquid waste. With a focus on inclusivity, the conference provides an excellent platform for sharing ideas, methods and approaches for effective waste management, emphasizing the core issues of solid waste management, water and wastewater, and circular economy.
+                  Recycle 2027 aims to raise awareness of safe practices and the latest technologies for managing and treating solid and liquid waste, with an added emphasis on 'Inclusivity'—to bring together all researchers, scientists, professionals, industry personnel, and citizens to bridge the gap between research and practice.
                 </p>
               </div>
               {/* Button */}
