@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { Calendar, Lightbulb, MapPin, Leaf, ArrowRight, FileText, User, Download, X } from "lucide-react";
+import { useRef } from "react";
+import { Calendar, Lightbulb, MapPin, Leaf, ArrowRight, FileText, User, Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Countdown } from "@/components/shared/Countdown";
 import { FAQList } from "@/components/shared/FAQList";
 import { FinalCTA } from "@/components/shared/FinalCTA";
@@ -22,7 +22,6 @@ import { Users, Settings } from "lucide-react";
 
 export default function Home() {
   const { openModal } = useRegistrationModal();
-  const [showNotification, setShowNotification] = useState(true);
   const speakerScrollRef = useRef<HTMLDivElement>(null);
 
   const scrollSpeakers = (direction: "left" | "right") => {
@@ -38,35 +37,6 @@ export default function Home() {
       
       {/* 02. HERO */}
       <section id="hero" className="relative w-full border-b-[2px] border-white overflow-hidden">
-        
-        {/* NOTIFICATION */}
-        <AnimatePresence>
-          {showNotification && (
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="absolute top-24 right-4 md:top-28 md:right-8 lg:top-[120px] lg:right-10 z-[100] bg-white border border-recycle-green/20 shadow-xl py-3 px-4 pr-10 rounded-[8px] max-w-[400px] flex items-center"
-            >
-              <button 
-                onClick={() => setShowNotification(false)}
-                className="absolute top-1.5 right-1.5 p-1 text-recycle-text/40 hover:text-recycle-text transition-colors"
-                aria-label="Close notification"
-              >
-                <X size={16} />
-              </button>
-              <div className="flex items-center gap-3">
-                <div className="bg-recycle-green/10 p-2 rounded-full text-recycle-green shrink-0">
-                  <Calendar size={20} />
-                </div>
-                <div className="flex flex-col">
-                  <h4 className="font-display text-[13px] font-semibold text-recycle-text mb-0.5">Registration Opens Soon!</h4>
-                  <p className="text-[11.5px] text-recycle-text/70 leading-snug">Early bird registration begins on 20th March 2027.</p>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
         {/* DESKTOP BACKGROUND IMAGE */}
         <ScrollParallax speed={1} max={12} className="hidden lg:block w-full h-[700px] z-0 origin-center scale-[1.02]">
           <Image
@@ -361,9 +331,9 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Theme grid: 5 columns × 2 rows */}
+          {/* Theme grid: 4 columns × 2 rows */}
           <ScrollParallax speed={-0.03} max={8}>
-          <Stagger staggerDelay={0.04} delayChildren={0.1} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+          <Stagger staggerDelay={0.04} delayChildren={0.1} className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 lg:gap-6">
             {themes.map((theme) => {
               const Icon = theme.icon;
               return (

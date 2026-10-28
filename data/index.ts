@@ -10,3 +10,4 @@ export * from "./committees";
 export * from "./registration";
 export * from "./contact";
 export * from "./faqs";
+export * from "./programme";

@@ -17,6 +17,7 @@ export const advisoryCommittee = {
       name: "Prof. Devendra Jalihal",
       role: "Director",
       affiliation: "IIT Guwahati",
+      image: "/images/committee/devendra-jalihal.jpg",
     }
   ],
   chairmen: [
@@ -25,12 +26,14 @@ export const advisoryCommittee = {
       name: "Prof. Rajib Bhattacharjya",
       role: "HOD, Department of Civil Engineering",
       affiliation: "IIT Guwahati",
+      image: "/images/committee/rajib-bhattacharjya.jpg",
     },
     {
       id: "ac-3",
       name: "Prof. Sudip Mitra",
       role: "HOS, SART",
       affiliation: "IIT Guwahati",
+      image: "/images/committee/sudip-mitra.jpg",
     }
   ],
   convenors: [
@@ -39,12 +42,14 @@ export const advisoryCommittee = {
       name: "Prof. Ajay Kalamdhad",
       role: "Department of Civil Engineering",
       affiliation: "IIT Guwahati",
+      image: "/images/committee/ajay-kalamdhad.jpg",
     },
     {
       id: "ac-5",
       name: "Dr. Meena Khwairakpam",
       role: "SART",
       affiliation: "IIT Guwahati",
+      image: "/images/committee/meena-khwairakpam.jpg",
     }
   ],
   internationalMembers: [

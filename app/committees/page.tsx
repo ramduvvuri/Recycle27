@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Users, GraduationCap, MapPin } from "lucide-react";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
@@ -43,12 +44,29 @@ export default function CommitteesPage() {
               <h3 className="font-display text-xl text-primary-emerald mb-6 pb-2 border-b border-primary-emerald/20">Patron</h3>
               <div className="space-y-6">
                 {advisoryCommittee.patrons.map((member) => (
-                  <div key={member.id} className="bg-soft-bg rounded-lg p-5 border border-light-border">
-                    <h4 className="font-display text-lg text-dark-text mb-1">{member.name}</h4>
-                    <p className="text-sm font-medium text-primary-emerald mb-2">{member.role}</p>
-                    <p className="text-xs text-secondary-text flex items-center gap-1.5">
-                      <MapPin size={12} className="shrink-0" /> {member.affiliation}
-                    </p>
+                  <div key={member.id} className="bg-soft-bg rounded-xl p-5 border border-light-border flex items-start gap-4 hover:shadow-md transition-shadow">
+                    <div className="relative w-20 h-24 sm:w-24 sm:h-28 rounded-lg overflow-hidden shrink-0 bg-white border border-light-border/60 shadow-sm">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover object-top"
+                          sizes="96px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-recycle-sage text-recycle-green/40">
+                          <Users size={28} />
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-display text-lg text-dark-text mb-1 leading-snug">{member.name}</h4>
+                      <p className="text-xs font-semibold text-primary-emerald mb-2 leading-tight">{member.role}</p>
+                      <p className="text-xs text-secondary-text flex items-center gap-1.5">
+                        <MapPin size={12} className="shrink-0 text-primary-emerald/70" /> {member.affiliation}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -59,12 +77,29 @@ export default function CommitteesPage() {
               <h3 className="font-display text-xl text-primary-emerald mb-6 pb-2 border-b border-primary-emerald/20">Chairman</h3>
               <div className="space-y-6">
                 {advisoryCommittee.chairmen.map((member) => (
-                  <div key={member.id} className="bg-soft-bg rounded-lg p-5 border border-light-border">
-                    <h4 className="font-display text-lg text-dark-text mb-1">{member.name}</h4>
-                    <p className="text-sm font-medium text-primary-emerald mb-2">{member.role}</p>
-                    <p className="text-xs text-secondary-text flex items-center gap-1.5">
-                      <MapPin size={12} className="shrink-0" /> {member.affiliation}
-                    </p>
+                  <div key={member.id} className="bg-soft-bg rounded-xl p-5 border border-light-border flex items-start gap-4 hover:shadow-md transition-shadow">
+                    <div className="relative w-20 h-24 sm:w-24 sm:h-28 rounded-lg overflow-hidden shrink-0 bg-white border border-light-border/60 shadow-sm">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover object-top"
+                          sizes="96px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-recycle-sage text-recycle-green/40">
+                          <Users size={28} />
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-display text-lg text-dark-text mb-1 leading-snug">{member.name}</h4>
+                      <p className="text-xs font-semibold text-primary-emerald mb-2 leading-tight">{member.role}</p>
+                      <p className="text-xs text-secondary-text flex items-center gap-1.5">
+                        <MapPin size={12} className="shrink-0 text-primary-emerald/70" /> {member.affiliation}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -75,12 +110,29 @@ export default function CommitteesPage() {
               <h3 className="font-display text-xl text-primary-emerald mb-6 pb-2 border-b border-primary-emerald/20">Convenor</h3>
               <div className="space-y-6">
                 {advisoryCommittee.convenors.map((member) => (
-                  <div key={member.id} className="bg-soft-bg rounded-lg p-5 border border-light-border">
-                    <h4 className="font-display text-lg text-dark-text mb-1">{member.name}</h4>
-                    <p className="text-sm font-medium text-primary-emerald mb-2">{member.role}</p>
-                    <p className="text-xs text-secondary-text flex items-center gap-1.5">
-                      <MapPin size={12} className="shrink-0" /> {member.affiliation}
-                    </p>
+                  <div key={member.id} className="bg-soft-bg rounded-xl p-5 border border-light-border flex items-start gap-4 hover:shadow-md transition-shadow">
+                    <div className="relative w-20 h-24 sm:w-24 sm:h-28 rounded-lg overflow-hidden shrink-0 bg-white border border-light-border/60 shadow-sm">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover object-top"
+                          sizes="96px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-recycle-sage text-recycle-green/40">
+                          <Users size={28} />
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-display text-lg text-dark-text mb-1 leading-snug">{member.name}</h4>
+                      <p className="text-xs font-semibold text-primary-emerald mb-2 leading-tight">{member.role}</p>
+                      <p className="text-xs text-secondary-text flex items-center gap-1.5">
+                        <MapPin size={12} className="shrink-0 text-primary-emerald/70" /> {member.affiliation}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>

@@ -63,15 +63,35 @@ export function Navbar() {
 
   return (
     <>
-      <nav
-        className={cn(
-          "fixed top-0 inset-x-0 z-50 border-b h-[72px] flex items-center transition-all duration-300",
-          scrolled
-            ? "bg-[#FAF9F2]/98 border-[#133C31]/18 shadow-[0_2px_16px_rgba(7,23,16,0.07)] backdrop-blur-[4px]"
-            : "bg-[#FAF9F2] border-[#133C31]/10"
-        )}
-      >
-        <div className="w-full max-w-[1400px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 h-full flex items-center justify-between gap-4 xl:gap-6">
+      <header className="fixed top-0 inset-x-0 z-50 flex flex-col w-full">
+        {/* Abstract Submission Announcement Bar */}
+        <aside
+          aria-label="Conference Announcement"
+          className="w-full bg-[#0C5A3D] text-[#FAF9F2] border-b border-[#08422c] py-1.5 px-3 sm:px-4 transition-colors"
+        >
+          <div className="w-full max-w-[1400px] mx-auto flex items-center justify-center text-center">
+            <Link
+              href="/call-for-abstracts"
+              className="group inline-flex items-center justify-center gap-1.5 text-[11px] sm:text-[12.5px] font-medium tracking-tight text-[#FAF9F2] hover:text-white transition-colors focus:outline-none focus:ring-1 focus:ring-white/50 rounded py-0.5"
+            >
+              <span className="font-semibold tracking-wide">Call for Abstracts</span>
+              <span className="opacity-50 mx-1">|</span>
+              <span>Submit your research and download the abstract format</span>
+              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-semibold ml-0.5 motion-reduce:transform-none" aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </aside>
+
+        {/* Main Navigation */}
+        <nav
+          className={cn(
+            "w-full border-b h-[68px] sm:h-[72px] flex items-center transition-all duration-300",
+            scrolled
+              ? "bg-[#FAF9F2]/98 border-[#133C31]/18 shadow-[0_2px_16px_rgba(7,23,16,0.07)] backdrop-blur-[4px]"
+              : "bg-[#FAF9F2] border-[#133C31]/10"
+          )}
+        >
+          <div className="w-full max-w-[1400px] mx-auto px-5 md:px-8 lg:px-10 xl:px-12 h-full flex items-center justify-between gap-4 xl:gap-6">
           
           {/* BRAND LOCKUP */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
@@ -193,10 +213,11 @@ export function Navbar() {
           </div>
         </div>
       </nav>
+      </header>
 
       {/* MOBILE MENU OVERLAY */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#FAF9F2] pt-[72px] overflow-y-auto lg:hidden flex flex-col">
+        <div className="fixed inset-0 z-40 bg-[#FAF9F2] pt-[104px] overflow-y-auto lg:hidden flex flex-col">
           <div className="p-5 flex flex-col h-full">
             <ul className="flex flex-col gap-1 mt-4">
               {NAV_LINKS.map((link) => (

@@ -1,5 +1,6 @@
 // =============================================================================
-// /data/themes.ts — Conference themes
+// /data/themes.ts — Official Conference Themes for ReCYCLE 2027
+// Source of Truth: Themes and Tentative Schedule.docx (Eight Official Themes)
 // =============================================================================
 
 import {
@@ -9,10 +10,8 @@ import {
   Beaker,
   Globe2,
   Flame,
-  Settings,
-  Users,
-  FileText,
-  ArrowRight,
+  Filter,
+  Cpu,
   type LucideIcon,
 } from "lucide-react";
 
@@ -20,7 +19,7 @@ export interface Theme {
   id: number;
   number: string;
   title: string;
-  titleMultiline: string; // \n-separated for compact display
+  titleMultiline: string; // \n-separated for compact card display
   description: string;
   icon: LucideIcon;
 }
@@ -32,25 +31,25 @@ export const themes: Theme[] = [
     title: "Solid Waste Management: Generation, Collection, Segregation, Storage, and Transportation",
     titleMultiline: "Solid Waste\nManagement",
     description:
-      "Advanced strategies for waste minimization, segregation, collection, transportation, treatment, and disposal.",
+      "Advanced strategies for waste minimization, source segregation, smart collection, storage logistics, and transportation.",
     icon: Recycle,
   },
   {
     id: 2,
     number: "02",
-    title: "Water and Wastewater Treatment, Reuse and Resource Recovery",
+    title: "Water and Wastewater Treatment, Reuse, and Resource Recovery",
     titleMultiline: "Water & Wastewater\nTreatment",
     description:
-      "Innovative approaches to water and wastewater treatment, reuse, and resource recovery.",
+      "Innovative methodologies for industrial and municipal wastewater reclamation, nutrient recovery, and circular reuse.",
     icon: Droplets,
   },
   {
     id: 3,
     number: "03",
-    title: "Reduce, Reuse, Recycle, Remediation, and Recovery concepts",
-    titleMultiline: "Reduce, Reuse,\nRecycle & Recovery",
+    title: "Reduce, Reuse, Recycling, Resource Recovery, Carbon Sequestration, and Circular Economy",
+    titleMultiline: "Circular Economy &\nCarbon Sequestration",
     description:
-      "Circular strategies that keep materials in use and minimize waste at source.",
+      "Holistic material recycling, industrial symbiosis, carbon sequestration, and closed-loop circular economic systems.",
     icon: Leaf,
   },
   {
@@ -59,7 +58,7 @@ export const themes: Theme[] = [
     title: "Biological Treatment and Bioconversion Technologies",
     titleMultiline: "Biological Treatment\n& Bioconversion",
     description:
-      "Composting, anaerobic digestion, bioremediation, and biotechnological approaches to waste treatment.",
+      "Composting, anaerobic digestion, microbial bioremediation, and bioconversion of organic waste to high-value biochemicals.",
     icon: Beaker,
   },
   {
@@ -68,52 +67,34 @@ export const themes: Theme[] = [
     title: "Landfilling, Leachate Management, and Landfill Mining",
     titleMultiline: "Landfilling &\nLeachate Management",
     description:
-      "Engineering and environmental management of landfills including leachate treatment and landfill gas.",
+      "Engineered containment, landfill barrier design, leachate treatment, landfill gas recovery, and circular landfill mining.",
     icon: Globe2,
   },
   {
     id: 6,
     number: "06",
-    title: "Waste-to-Energy Technologies and Circular Economy",
-    titleMultiline: "Waste-to-Energy\n& Circular Economy",
+    title: "Pyrolysis, Gasification, Incineration, and Thermochemical Conversion Technologies",
+    titleMultiline: "Pyrolysis, Gasification\n& Incineration",
     description:
-      "Technologies and policies for energy recovery from waste and circular economic systems.",
+      "High-efficiency thermochemical pathways converting solid waste and biomass into clean syngas, biochar, and energy.",
     icon: Flame,
   },
   {
     id: 7,
     number: "07",
-    title: "Pyrolysis, Gasification, and Thermochemical Conversion Technologies",
-    titleMultiline: "Pyrolysis, Gasification\n& Thermochemical\nConversion",
+    title: "Microplastics and Emerging Pollutants: Fate, Treatment, and Remediation",
+    titleMultiline: "Microplastics &\nEmerging Pollutants",
     description:
-      "Thermochemical pathways for converting waste to fuels, chemicals, and energy.",
-    icon: Settings,
+      "Environmental fate, toxicological impacts, analytical detection, advanced oxidation, and remediation of emerging contaminants.",
+    icon: Filter,
   },
   {
     id: 8,
     number: "08",
-    title: "Microplastics and Emerging Pollutants: Fate, Treatment, and Remediation",
-    titleMultiline: "Microplastics &\nEmerging Pollutants",
+    title: "Integration of Artificial Intelligence, Machine Learning, and Digital Technologies in Waste Management",
+    titleMultiline: "AI, Machine Learning\n& Digital Technologies",
     description:
-      "Detection, impact assessment, and mitigation of microplastics and emerging contaminants.",
-    icon: Users,
-  },
-  {
-    id: 9,
-    number: "09",
-    title: "Waste Management Policies, Legislation, Governance, and Sustainability",
-    titleMultiline: "Policies, Legislation,\nGovernance &\nSustainability",
-    description:
-      "Regulatory frameworks, governance models, and sustainability dimensions of waste management.",
-    icon: FileText,
-  },
-  {
-    id: 10,
-    number: "10",
-    title: "Any other issues in waste management",
-    titleMultiline: "Other Issues in\nWaste Management",
-    description:
-      "Emerging and interdisciplinary topics not covered under the above themes.",
-    icon: ArrowRight,
+      "Artificial intelligence, machine learning algorithms, IoT telemetry, robotics, and smart digital systems in modern waste management.",
+    icon: Cpu,
   },
 ];
