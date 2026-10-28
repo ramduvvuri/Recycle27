@@ -23,6 +23,16 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "RECYCLE27 — International Conference on Sustainable Waste Management and Circular Economy",
   description: "RECYCLE27 brings together researchers, industry experts, policymakers and students to discuss innovations and solutions for sustainable waste management and circular economy at IIT Guwahati.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
