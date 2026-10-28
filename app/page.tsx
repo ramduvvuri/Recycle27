@@ -63,7 +63,7 @@ export default function Home() {
 
       {/* Hero entrance sequence */}
       <motion.div
-        className="relative lg:absolute lg:inset-0 z-10 mx-auto w-full max-w-[1400px] px-5 md:px-8 lg:px-10 xl:px-12 flex items-center min-h-[594px] md:min-h-[660px] lg:min-h-0 pt-[110px] lg:pt-[2%] xl:pt-[2.5%] pb-16 lg:pb-0"
+        className="relative lg:absolute lg:inset-0 z-10 mx-auto w-full max-w-[1400px] px-5 md:px-8 lg:px-10 xl:px-12 flex items-center min-h-[594px] md:min-h-[660px] lg:min-h-0 pt-[140px] sm:pt-[148px] md:pt-[154px] lg:pt-[2%] xl:pt-[2.5%] pb-16 lg:pb-0"
         initial="hidden"
         animate="visible"
         variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}

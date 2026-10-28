@@ -80,7 +80,7 @@ export function PageHero({
   const resolvedImage = image || (pageKey ? getHeroImage(pageKey) : getHeroImage("about"));
 
   return (
-    <section className="relative flex items-center overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20 lg:pt-40 lg:pb-24">
+    <section className="relative flex items-center overflow-hidden pt-36 pb-16 md:pt-40 md:pb-20 lg:pt-44 lg:pb-24">
 
       {/* Background Image — full visual strength */}
       <motion.div

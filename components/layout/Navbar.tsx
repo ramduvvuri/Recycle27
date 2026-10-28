@@ -67,17 +67,17 @@ export function Navbar() {
         {/* Abstract Submission Announcement Bar */}
         <aside
           aria-label="Conference Announcement"
-          className="w-full bg-[#0C5A3D] text-[#FAF9F2] border-b border-[#08422c] py-1.5 px-3 sm:px-4 transition-colors"
+          className="w-full bg-[#0C5A3D] text-[#FAF9F2] border-b border-[#08422c] py-1 sm:py-1.5 px-3 sm:px-4 transition-colors"
         >
           <div className="w-full max-w-[1400px] mx-auto flex items-center justify-center text-center">
             <Link
               href="/call-for-abstracts"
-              className="group inline-flex items-center justify-center gap-1.5 text-[11px] sm:text-[12.5px] font-medium tracking-tight text-[#FAF9F2] hover:text-white transition-colors focus:outline-none focus:ring-1 focus:ring-white/50 rounded py-0.5"
+              className="group inline-flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 text-[10.5px] sm:text-[12px] font-medium tracking-tight text-[#FAF9F2] hover:text-white transition-colors focus:outline-none focus:ring-1 focus:ring-white/50 rounded py-0.5"
             >
-              <span className="font-semibold tracking-wide">Call for Abstracts</span>
-              <span className="opacity-50 mx-1">|</span>
-              <span>Submit your research and download the abstract format</span>
-              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-semibold ml-0.5 motion-reduce:transform-none" aria-hidden="true">→</span>
+              <span className="font-semibold tracking-wide shrink-0">Call for Abstracts</span>
+              <span className="opacity-50 mx-0.5 hidden min-[380px]:inline" aria-hidden="true">|</span>
+              <span className="text-center">Submit your research and download the abstract format</span>
+              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1 font-semibold ml-0.5 motion-reduce:transform-none shrink-0" aria-hidden="true">→</span>
             </Link>
           </div>
         </aside>
@@ -226,7 +226,7 @@ export function Navbar() {
 
       {/* MOBILE MENU OVERLAY */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#FAF9F2] pt-[104px] overflow-y-auto lg:hidden flex flex-col">
+        <div className="fixed inset-0 z-40 bg-[#FAF9F2] pt-[124px] sm:pt-[128px] overflow-y-auto lg:hidden flex flex-col">
           <div className="p-5 flex flex-col h-full">
             <ul className="flex flex-col gap-1 mt-4">
               {NAV_LINKS.map((link) => (
