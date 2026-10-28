@@ -12,6 +12,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
   showArrow?: boolean;
   modalTrigger?: boolean;
+  target?: string;
+  rel?: string;
+  download?: boolean | string;
 }
 
 export function Button({
@@ -21,6 +24,9 @@ export function Button({
   icon,
   showArrow = false,
   modalTrigger = false,
+  target,
+  rel,
+  download,
   children,
   ...props
 }: ButtonProps) {
@@ -64,6 +70,21 @@ export function Button({
   }
 
   if (href) {
+    const isExternal = href.startsWith("http://") || href.startsWith("https://") || Boolean(download);
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          target={target}
+          rel={rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)}
+          download={download}
+          className={cn(baseStyles, variants[variant], "group", className)}
+        >
+          {content}
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={cn(baseStyles, variants[variant], "group", className)}>
         {content}

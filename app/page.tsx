@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Calendar, Lightbulb, MapPin, Leaf, ArrowRight, FileText, User, Download, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,6 +23,14 @@ import { Users, Settings } from "lucide-react";
 export default function Home() {
   const { openModal } = useRegistrationModal();
   const [showNotification, setShowNotification] = useState(true);
+  const speakerScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollSpeakers = (direction: "left" | "right") => {
+    if (speakerScrollRef.current) {
+      const scrollAmount = direction === "left" ? -460 : 460;
+      speakerScrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -444,7 +452,7 @@ export default function Home() {
             
             {/* Submit Abstract */}
             <StaggerItem>
-              <Link href="/abstracts" className="group flex flex-col items-center justify-center py-10 bg-white border border-recycle-green/10 rounded-[8px] hover:border-recycle-green/30 hover:shadow-[0_12px_30px_rgba(12,90,61,0.08)] transition-all duration-300 ease-out hover:-translate-y-1">
+              <Link href="/call-for-abstracts" className="group flex flex-col items-center justify-center py-10 bg-white border border-recycle-green/10 rounded-[8px] hover:border-recycle-green/30 hover:shadow-[0_12px_30px_rgba(12,90,61,0.08)] transition-all duration-300 ease-out hover:-translate-y-1">
                 <FileText className="text-recycle-text mb-4 group-hover:text-recycle-green transition-colors" size={28} strokeWidth={1.5} />
                 <span className="font-body text-[14px] font-medium text-recycle-text group-hover:text-recycle-green transition-colors">Submit Abstract</span>
               </Link>
@@ -471,7 +479,7 @@ export default function Home() {
       </section>
 
 
-      {/* 08. KEYNOTE SPEAKERS */}
+      {/* 08. SPEAKERS */}
       <section id="speakers" className="relative w-full overflow-hidden bg-recycle-cream pt-16 pb-20 lg:pt-20 lg:pb-24">
         {/* Leaf — lower-left */}
         <ScrollParallax speed={-0.08} max={14} className="absolute bottom-0 left-0 w-[280px] h-[340px] opacity-[0.065] pointer-events-none -translate-x-[38%] translate-y-[15%]">
@@ -487,7 +495,7 @@ export default function Home() {
                 <div className="h-px w-[20px] bg-recycle-green/50" />
                 <p className="font-body text-[9px] font-bold tracking-[0.18em] text-recycle-green uppercase">DISTINGUISHED SPEAKERS</p>
               </div>
-              <h2 className="font-display text-[28px] md:text-[32px] tracking-[-.02em] text-recycle-text leading-[1] font-medium">Our Keynote Speakers</h2>
+              <h2 className="font-display text-[28px] md:text-[32px] tracking-[-.02em] text-recycle-text leading-[1] font-medium">Distinguished Speakers</h2>
             </div>
             <Link href="/speakers" className="font-body text-[11px] font-medium text-recycle-green hover:text-[#073d28] transition-colors whitespace-nowrap mb-[3px]">
               View All Speakers <span aria-hidden="true" className="ml-0.5">→</span>
@@ -498,43 +506,52 @@ export default function Home() {
           <div className="relative flex items-center mt-10">
             {/* Left Arrow */}
             <button
-              className="absolute -left-4 md:-left-12 w-[42px] h-[42px] rounded-full border border-recycle-green/35 flex items-center justify-center text-recycle-green hover:bg-recycle-green hover:text-white transition-colors z-20 bg-recycle-cream shrink-0 hover:shadow-lg"
+              onClick={() => scrollSpeakers("left")}
+              className="absolute -left-4 md:-left-12 w-[42px] h-[42px] rounded-full border border-recycle-green/35 flex items-center justify-center text-recycle-green hover:bg-recycle-green hover:text-white transition-colors z-20 bg-recycle-cream shrink-0 hover:shadow-lg cursor-pointer"
               aria-label="Previous speakers"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
 
             <ScrollParallax speed={0.03} max={6} className="w-full">
-            <Stagger staggerDelay={0.07} delayChildren={0.05} className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 px-5 md:px-4">
-              {keynoteSpeakers.map((speaker) => (
-                <StaggerItem key={speaker.id}>
-                  <div className="group relative bg-white rounded-[12px] border border-[#113224]/10 hover:border-recycle-green/30 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(12,90,61,0.12)] flex flex-col items-center pt-6 pb-5 px-3 overflow-hidden">
-                    <div className="w-[96px] h-[108px] rounded-[6px] overflow-hidden relative mb-4 shrink-0 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                      {speaker.image ? (
-                        <Image
-                          src={speaker.image}
-                          alt={speaker.name}
-                          fill
-                          className="object-cover object-top group-hover:scale-[1.08] transition-transform duration-700 ease-out"
-                          sizes="96px"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-recycle-sage flex items-center justify-center">
-                          <Users size={32} className="text-recycle-green/30" />
-                        </div>
+              <div
+                ref={speakerScrollRef}
+                className="w-full flex gap-4 overflow-x-auto scroll-smooth py-3 px-2 no-scrollbar"
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              >
+                {keynoteSpeakers.map((speaker) => (
+                  <div key={speaker.id} className="w-[180px] sm:w-[200px] md:w-[220px] shrink-0">
+                    <div className="group relative bg-white rounded-[12px] border border-[#113224]/10 hover:border-recycle-green/30 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(12,90,61,0.12)] flex flex-col items-center pt-6 pb-5 px-3 overflow-hidden h-full">
+                      <div className="w-[96px] h-[108px] rounded-[6px] overflow-hidden relative mb-4 shrink-0 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                        {speaker.image ? (
+                          <Image
+                            src={speaker.image}
+                            alt={speaker.name}
+                            fill
+                            className="object-cover object-top group-hover:scale-[1.08] transition-transform duration-700 ease-out"
+                            sizes="96px"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-recycle-sage flex items-center justify-center">
+                            <Users size={32} className="text-recycle-green/30" />
+                          </div>
+                        )}
+                      </div>
+                      <h3 className="font-body font-semibold text-recycle-text text-[12.5px] leading-[1.3] mb-[3px] text-center transition-colors duration-300 group-hover:text-recycle-green">{speaker.name}</h3>
+                      {speaker.title && (
+                        <p className="text-[10.5px] font-medium text-recycle-green text-center mb-1">{speaker.title}</p>
                       )}
+                      <p className="text-[11px] text-recycle-text/65 leading-[1.35] text-center">{speaker.affiliation}{speaker.country ? `, ${speaker.country}` : ""}</p>
                     </div>
-                    <h3 className="font-body font-semibold text-recycle-text text-[12.5px] leading-[1.3] mb-[3px] text-center transition-colors duration-300 group-hover:text-recycle-green">{speaker.name}</h3>
-                    <p className="text-[11px] text-recycle-text/65 leading-[1.35] text-center">{speaker.affiliation}{speaker.country ? `, ${speaker.country}` : ""}</p>
                   </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
+                ))}
+              </div>
             </ScrollParallax>
 
             {/* Right Arrow */}
             <button
-              className="absolute -right-4 md:-right-12 w-[42px] h-[42px] rounded-full border border-recycle-green/35 flex items-center justify-center text-recycle-green hover:bg-recycle-green hover:text-white transition-colors z-20 bg-recycle-cream shrink-0 hover:shadow-lg"
+              onClick={() => scrollSpeakers("right")}
+              className="absolute -right-4 md:-right-12 w-[42px] h-[42px] rounded-full border border-recycle-green/35 flex items-center justify-center text-recycle-green hover:bg-recycle-green hover:text-white transition-colors z-20 bg-recycle-cream shrink-0 hover:shadow-lg cursor-pointer"
               aria-label="Next speakers"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>

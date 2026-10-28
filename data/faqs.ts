@@ -35,7 +35,7 @@ export const faqs: FAQ[] = [
     id: "faq-4",
     question: "What is the deadline for abstract submission?",
     answer:
-      "The last date for abstract submission is 1st February 2027. Please ensure your abstract is submitted before this deadline.",
+      "The last date for abstract submission is 31st January 2027. Please ensure your abstract is submitted before this deadline.",
     category: "submission",
   },
   {
@@ -56,7 +56,7 @@ export const faqs: FAQ[] = [
     id: "faq-7",
     question: "How do I submit my abstract?",
     answer:
-      "Details on abstract submission will be announced on the conference website. Please check the Call for Abstracts page for guidelines and the submission link when it becomes available.",
+      "Abstracts must be prepared using the official Microsoft Word template (.docx) and submitted online through the Google Form on the Call for Abstracts page.",
     category: "submission",
   },
   {

@@ -32,6 +32,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/abstracts",
+        destination: "/call-for-abstracts",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

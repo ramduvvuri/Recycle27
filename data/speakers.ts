@@ -1,69 +1,136 @@
 // =============================================================================
 // /data/speakers.ts — Conference speakers (local static data)
-// Replaces Supabase speaker fetching for the public website.
-// =============================================================
+// Source: recycle speakers.docx (Tentative List of Speakers for the Conference)
+// =============================================================================
 
 export interface Speaker {
   id: string;
   name: string;
+  title?: string;
+  department?: string;
   affiliation: string;
-  country: string;
+  country?: string;
   image?: string;
   topic?: string;
   bio?: string;
-  role?: "keynote" | "plenary" | "invited";
+  role?: string;
+  category?: string;
 }
 
 /**
- * Approved keynote speakers for ReCYCLE 2027.
- * Images use Unsplash placeholders until official portraits are supplied.
- * TO UPDATE: Replace the image URL with the official portrait when available.
+ * Tentative list of speakers for ReCYCLE 2027 from `recycle speakers.docx`.
+ * 
+ * REVIEW FLAG: The source document provides a "Tentative List of Speakers for the Conference"
+ * without specifying sub-classifications (e.g. keynote vs. plenary vs. invited).
+ * Specific keynote/plenary designations are pending official classification by conference organizers.
+ * Verified portrait images are extracted directly from the source document media.
  */
-export const keynoteSpeakers: Speaker[] = [
+export const speakers: Speaker[] = [
   {
     id: "speaker-1",
-    name: "Prof. Jonathan W C Wong",
-    affiliation: "DUT, Guangdong",
-    country: "China",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
-    role: "keynote",
+    name: "Prof. A.A. Kazmi",
+    department: "Civil Engineering Department",
+    affiliation: "Indian Institute of Technology Roorkee",
+    country: "India",
+    image: "/images/speakers/prof-a-a-kazmi.jpeg",
   },
   {
     id: "speaker-2",
-    name: "Prof. John In Hong",
-    affiliation: "SNU",
-    country: "South Korea",
-    image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&w=200&q=80",
-    role: "keynote",
+    name: "Prof. B.J. Alappat",
+    department: "Department of Civil Engineering",
+    affiliation: "Indian Institute of Technology Delhi",
+    country: "India",
+    image: "/images/speakers/prof-b-j-alappat.jpeg",
   },
   {
     id: "speaker-3",
-    name: "Prof. Pascaline Pré",
-    affiliation: "IMT Atlantique",
-    country: "France",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
-    role: "keynote",
+    name: "Dr. S Venkata Mohan",
+    title: "Director",
+    department: "CSIR National Environmental Engineering Research Institute, Nagpur",
+    affiliation: "Indian Institute of Chemical Technology",
+    country: "India",
+    image: "/images/speakers/dr-s-venkata-mohan.jpeg",
   },
   {
     id: "speaker-4",
-    name: "Prof. Agamutu Pariatamby",
-    affiliation: "Sunway University",
-    country: "Malaysia",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-    role: "keynote",
+    name: "Prof. Aki Sebastian Ruhl",
+    title: "Professor for Water Treatment",
+    affiliation: "Technische Universität Berlin",
+    country: "Germany",
+    image: "/images/speakers/prof-aki-sebastian-ruhl.jpeg",
   },
   {
     id: "speaker-5",
-    name: "Prof. C. Visvanathan",
-    affiliation: "AIT",
-    country: "Thailand",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
-    role: "keynote",
+    name: "Prof. Fumitake Nishimura",
+    department: "Department of Environmental Engineering",
+    affiliation: "Kyoto University",
+    country: "Japan",
+    image: "/images/speakers/prof-fumitake-nishimura.jpeg",
+  },
+  {
+    id: "speaker-6",
+    name: "Prof. Makarand Madhao Ghangrekar",
+    department: "Civil Engineering Department",
+    affiliation: "Indian Institute of Technology Kharagpur",
+    country: "India",
+    image: "/images/speakers/prof-makarand-madhao-ghangrekar.jpeg",
+  },
+  {
+    id: "speaker-7",
+    name: "Prof. B.K. Dubey",
+    department: "Civil Engineering Department",
+    affiliation: "Indian Institute of Technology Kharagpur",
+    country: "India",
+    image: "/images/speakers/prof-b-k-dubey.jpeg",
+  },
+  {
+    id: "speaker-8",
+    name: "Prof. R.R. Dash",
+    department: "School of Infrastructure",
+    affiliation: "Indian Institute of Technology Bhubaneswar",
+    country: "India",
+    image: "/images/speakers/prof-r-r-dash.png",
+  },
+  {
+    id: "speaker-9",
+    name: "Prof. Anurag Garg",
+    department: "Environmental Science and Engineering Department",
+    affiliation: "Indian Institute of Technology Bombay",
+    country: "India",
+    image: "/images/speakers/prof-anurag-garg.jpeg",
+  },
+  {
+    id: "speaker-10",
+    name: "Dr. Sonil Nanda",
+    title: "Assistant Professor",
+    department: "Department of Engineering, Faculty of Agriculture",
+    affiliation: "Dalhousie University",
+    country: "Canada",
+    image: "/images/speakers/dr-sonil-nanda.jpeg",
+  },
+  {
+    id: "speaker-11",
+    name: "Dr. Mayur Shirish Jain",
+    title: "Associate Professor",
+    department: "Department of Civil Engineering",
+    affiliation: "Indian Institute of Technology Indore",
+    country: "India",
+    image: "/images/speakers/dr-mayur-shirish-jain.jpeg",
+  },
+  {
+    id: "speaker-12",
+    name: "Dr. Daya Pandey",
+    title: "Assistant Professor",
+    department: "School of Mechanical Engineering",
+    affiliation: "University of Leeds",
+    country: "United Kingdom",
+    image: "/images/speakers/dr-daya-pandey.jpeg",
   },
 ];
 
 /**
- * All speakers combined.
- * Extend with plenary/invited speakers as they are confirmed.
+ * Backwards-compatible aliases for existing components.
+ * Both homepage and speakers page share this exact centralized dataset.
  */
-export const allSpeakers: Speaker[] = [...keynoteSpeakers];
+export const keynoteSpeakers: Speaker[] = speakers;
+export const allSpeakers: Speaker[] = speakers;
