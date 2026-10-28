@@ -14,7 +14,7 @@ export const faqs: FAQ[] = [
     id: "faq-1",
     question: "What is ReCYCLE 2027?",
     answer:
-      "ReCYCLE 2027 is the 6th International Conference on Waste Management, organized by the Waste Management Research Group (WMRG) at IIT Guwahati in association with AWASR Society. It is a platform for researchers, practitioners, industry experts, and policymakers to exchange knowledge and innovative ideas on sustainable waste management.",
+      "ReCYCLE 2027 is the 6th International Conference on Waste Management, organized by the Waste Management Research Group (WMRG) at IIT Guwahati in association with AWSAR Society. It is a platform for researchers, practitioners, industry experts, and policymakers to exchange knowledge and innovative ideas on sustainable waste management.",
     category: "general",
   },
   {

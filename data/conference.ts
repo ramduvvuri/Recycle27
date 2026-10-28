@@ -53,7 +53,7 @@ export const conference: ConferenceInfo = {
   tagline: "Innovative Solutions for a Cleaner, Healthier and More Sustainable Future",
   organizers: {
     group: "Waste Management Research Group (WMRG)",
-    society: "AWASR Society",
+    society: "AWSAR Society",
     department: "Department of Civil Engineering",
     institution: "Indian Institute of Technology Guwahati",
   },

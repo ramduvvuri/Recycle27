@@ -37,19 +37,19 @@ export function Footer() {
                 </p>
               </div>
 
-              {/* AWASR */}
+              {/* AWSAR Society IITG */}
               <div className="flex items-center gap-2 shrink-0">
                 <div className="relative w-[34px] h-[34px] shrink-0 border border-[#0C5A3D]/20 rounded-full overflow-hidden bg-white flex items-center justify-center shadow-sm">
                   <Image
-                    src="/images/sponsors/awasr_crop.png"
-                    alt="AWASR"
+                    src="/images/logo-awsar.png"
+                    alt="AWSAR Society IITG"
                     fill
                     className="object-contain p-[1px]"
                     sizes="34px"
                   />
                 </div>
                 <p className="font-body text-[10px] leading-[1.25] font-medium text-[#113224]/80 max-w-[70px]">
-                  AWASR<br />Society
+                  AWSAR<br />Society
                 </p>
               </div>
 

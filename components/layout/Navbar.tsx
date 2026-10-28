@@ -115,6 +115,15 @@ export function Navbar() {
                   sizes="32px"
                 />
               </div>
+              <div className="relative w-8 h-8">
+                <Image 
+                  src="/images/logo-awsar.png" 
+                  alt="AWSAR Society IITG" 
+                  fill 
+                  className="object-contain transition-transform group-hover:scale-105" 
+                  sizes="32px"
+                />
+              </div>
             </div>
             <div className="flex flex-col justify-center translate-y-[1px]">
               <span className="font-display text-[17px] font-semibold leading-[1.1] text-[#163D31] group-hover:text-[#0C7A52] transition-colors">

@@ -18,9 +18,19 @@ This register documents the origin, verification, and licensing status of portra
 
 ---
 
+## Organizing Institutions & Logos
+
+| Entity | Description | Source | Local Asset | Usage Notes | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **AWSAR Society IITG** | Association / Society co-organizer | Official `Abstract Format.docx` header & Organizer submission | `/images/logo-awsar.png`, `/images/sponsors/awasr_crop.png` | Official emblem featuring recycling circular arrows with central environmental sphere; used in header and footer organizer lockups. | Verified |
+| **IIT Guwahati** | Host Institution | Official IIT Guwahati branding asset | `/images/logo-iitg.png` | Official IITG logo mark. | Verified |
+| **WMRG** | Waste Management Research Group | Official research group identity asset | `/images/logo-wmrg.jpg` | Primary organizing research group mark. | Verified |
+
+---
+
 ## Verification & Integrity Principles
 
 1. **No Artificial Images**: No portraits are AI-generated, synthetic, or stock placeholders.
 2. **Institutional Source Priority**: All verified portraits originate directly from official `.iitg.ac.in` faculty and administrative repositories.
-3. **Local Serving**: Images are hosted locally under `public/images/committee/` to prevent external dependency failure and hotlink brittleness.
+3. **Local Serving**: Images are hosted locally under `public/images/committee/` and `public/images/` to prevent external dependency failure and hotlink brittleness.
 4. **Fallback Preservation**: Committee members without direct official institutional assets retain the approved neutral SVG/Lucide icon fallback.
