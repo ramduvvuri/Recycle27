@@ -8,16 +8,84 @@ import { SectionWrapper } from "@/components/sections/SectionWrapper";
 const photo = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=80`;
 
 const items = [
-  { title: "Inaugural Session", category: "RECYCLE26", id: "photo-1540575467063-178a50c2df87", span: "sm:col-span-2 lg:col-span-2", aspect: "aspect-[16/10]" },
-  { title: "Keynote Talk", category: "RECYCLE26", id: "photo-1503428593586-e225b39bddfe", span: "sm:col-span-1 lg:col-span-1", aspect: "aspect-[4/5]" },
-  { title: "IIT Guwahati Campus", category: "A Sustainable Tomorrow", id: "photo-1562774053-701939374585", span: "sm:col-span-1 lg:col-span-1", aspect: "aspect-[4/5]" },
-  { title: "Poster Presentation", category: "RECYCLE26", id: "photo-1551836022-d5d88e9218df", span: "sm:col-span-1 lg:col-span-1", aspect: "aspect-[4/3]" },
-  { title: "Engaged Audience", category: "RECYCLE25", id: "photo-1524178232363-1fb2b075b655", span: "sm:col-span-2 lg:col-span-2", aspect: "aspect-[16/10]" },
-  { title: "Panel Discussion", category: "RECYCLE26", id: "photo-1544531585-9847b68c8c86", span: "sm:col-span-1 lg:col-span-1", aspect: "aspect-[4/3]" },
-  { title: "Cultural Evening", category: "RECYCLE26", id: "photo-1524666041070-9d87656c25b3", span: "sm:col-span-1 lg:col-span-1", aspect: "aspect-[4/5]" },
-  { title: "Serene Evenings", category: "IIT Guwahati", id: "photo-1441974231531-c6227db76b6e", span: "sm:col-span-1 lg:col-span-1", aspect: "aspect-[4/5]" },
-  { title: "Conference Merchandise", category: "RECYCLE26", id: "photo-1540575467063-178a50c2df87", span: "sm:col-span-1 lg:col-span-1", aspect: "aspect-[4/5]" },
-  { title: "Campus Moments", category: "RECYCLE26", id: "photo-1503428593586-e225b39bddfe", span: "sm:col-span-1 lg:col-span-1", aspect: "aspect-[4/5]" },
+  {
+    title: "Inaugural Ceremony",
+    category: "ReCYCLE 2026",
+    id: "photo-1540575467063-178a50c2df87",
+    span: "col-span-1 sm:col-span-2 lg:col-span-2",
+  },
+  {
+    title: "Keynote Research Address",
+    category: "Plenary Track",
+    id: "photo-1503428593586-e225b39bddfe",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
+  {
+    title: "IIT Guwahati Academic Complex",
+    category: "Conference Venue",
+    id: "photo-1562774053-701939374585",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
+  {
+    title: "Poster Presentation & Discussion",
+    category: "Young Researchers",
+    id: "photo-1551836022-d5d88e9218df",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
+  {
+    title: "Engaged Audience & Interactive Q&A",
+    category: "Technical Sessions",
+    id: "photo-1524178232363-1fb2b075b655",
+    span: "col-span-1 sm:col-span-2 lg:col-span-2",
+  },
+  {
+    title: "Plenary Lecture Hall",
+    category: "Special Session",
+    id: "photo-1544531585-9847b68c8c86",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
+  {
+    title: "Environmental Research & Analysis",
+    category: "IITG Laboratories",
+    id: "photo-1577962917302-cd874c4e31d2",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
+  {
+    title: "Global Policy & Panel Discussion",
+    category: "Industry & Governance",
+    id: "photo-1475721027785-f74eccf877e2",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
+  {
+    title: "Conference Gala & Networking",
+    category: "Cultural Evening",
+    id: "photo-1511578314322-379afb476865",
+    span: "col-span-1 sm:col-span-2 lg:col-span-2",
+  },
+  {
+    title: "Serene Campus Trails",
+    category: "IIT Guwahati",
+    id: "photo-1441974231531-c6227db76b6e",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
+  {
+    title: "Circular Economy Industry Forum",
+    category: "Sustainable Tech",
+    id: "photo-1531482615713-2afd69097998",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
+  {
+    title: "Collaborative Workshop Session",
+    category: "Action Plan",
+    id: "photo-1515187029135-18ee286d815b",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
+  {
+    title: "Valedictory & Awards Banquet",
+    category: "Excellence in Waste Research",
+    id: "photo-1528605248644-14dd04022da1",
+    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+  },
 ];
 
 export function GallerySection() {
@@ -80,35 +148,41 @@ export function GallerySection() {
         <div className="flex flex-col md:flex-row md:justify-end mb-6">
           <button
             onClick={() => openSlideshow(0)}
-            className="flex items-center gap-2 border border-light-border bg-white px-5 py-2.5 text-sm text-dark-text hover:bg-soft-bg rounded-sm transition-colors whitespace-nowrap self-start md:self-auto"
+            className="flex items-center gap-2 border border-light-border bg-white px-5 py-2.5 text-sm text-dark-text hover:bg-soft-bg rounded-sm transition-colors whitespace-nowrap self-start md:self-auto shadow-sm"
           >
             <ImageIcon size={16} className="text-secondary-text" />
-            View Slideshow &rarr;
+            View Slideshow ({items.length} Photos) &rarr;
           </button>
         </div>
 
-        {/* Clean editorial grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-min">
+        {/* Balanced gapless grid: uniform row height so all slots align perfectly without gaps */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map((item, i) => (
             <article
               key={i}
               onClick={() => openSlideshow(i)}
-              className={`relative overflow-hidden rounded-xl ${item.span} ${item.aspect} group cursor-pointer bg-soft-bg`}
+              className={`relative overflow-hidden rounded-xl ${item.span} h-[240px] sm:h-[280px] lg:h-[300px] w-full group cursor-pointer bg-soft-bg shadow-sm border border-light-border/40`}
             >
               <Image
                 src={photo(item.id)}
                 fill
                 sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
                 alt={item.title}
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="absolute inset-x-0 bottom-0 p-6 text-light-text flex justify-between items-end translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                <div>
-                  <strong className="block text-base font-medium tracking-wide">{item.title}</strong>
-                  <span className="text-xs text-light-text/70 mt-1 block">{item.category}</span>
+              {/* Subtle permanent bottom gradient for readability + enhanced dark on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/85 group-hover:via-black/30" />
+              
+              <div className="absolute inset-x-0 bottom-0 p-5 text-white flex justify-between items-end transition-all duration-300">
+                <div className="pr-3">
+                  <span className="inline-block text-[11px] font-semibold uppercase tracking-wider text-[#9be3c6] bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm mb-1.5">
+                    {item.category}
+                  </span>
+                  <strong className="block text-[15px] font-medium leading-snug tracking-tight text-white drop-shadow-sm">
+                    {item.title}
+                  </strong>
                 </div>
-                <div className="bg-white/10 p-2 rounded-full backdrop-blur-sm">
+                <div className="bg-white/20 p-2 rounded-full backdrop-blur-md shrink-0 transition-transform duration-300 group-hover:scale-110">
                   <ImageIcon size={14} className="text-white" />
                 </div>
               </div>
