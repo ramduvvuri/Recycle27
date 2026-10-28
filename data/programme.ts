@@ -1,5 +1,5 @@
 // =============================================================================
-// /data/programme.ts — Official Two-Day Tentative Schedule for ReCYCLE 2027
+// /data/programme.ts — Official Two-Day Tentative Schedule for RECYCLE 2027
 // Source of Truth: Themes and Tentative Schedule.docx
 // Conference Dates: 20–21 May 2027
 // =============================================================================

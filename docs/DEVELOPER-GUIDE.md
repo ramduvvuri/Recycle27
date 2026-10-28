@@ -1,4 +1,4 @@
-# Developer Guide — ReCYCLE 2027
+# Developer Guide — RECYCLE 2027
 
 ## Technical Stack
 - **Framework:** Next.js 16.3 (App Router)

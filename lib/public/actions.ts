@@ -33,10 +33,10 @@ export async function submitContactInquiry(
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_FROM || '"ReCYCLE 2027" <noreply@iitg.ac.in>',
+      from: process.env.EMAIL_FROM || '"RECYCLE 2027" <noreply@iitg.ac.in>',
       to: ["recycle2k27@gmail.com", "recycle2k27@iitg.ac.in"].join(", "),
       replyTo: email,
-      subject: `[ReCYCLE 2027 Contact] ${subject}`,
+      subject: `[RECYCLE 2027 Contact] ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     };
 

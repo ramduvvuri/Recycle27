@@ -53,7 +53,7 @@ export function RegistrationModal({ isOpen, onClose }: RegistrationModalProps) {
           <div className="text-center mb-8">
             <EyebrowLabel label="REGISTRATION" />
             <h2 className="font-display text-3xl md:text-4xl text-dark-text leading-tight mt-4">
-              Register for ReCYCLE 2027
+              Register for RECYCLE 2027
             </h2>
             <p className="mt-4 text-sm leading-6 text-secondary-text max-w-xl mx-auto">
               Participants from academia, industry, government and civil society are

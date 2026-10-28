@@ -18,7 +18,7 @@ export interface Speaker {
 }
 
 /**
- * Tentative list of speakers for ReCYCLE 2027 from `recycle speakers.docx`.
+ * Tentative list of speakers for RECYCLE 2027 from `recycle speakers.docx`.
  * 
  * REVIEW FLAG: The source document provides a "Tentative List of Speakers for the Conference"
  * without specifying sub-classifications (e.g. keynote vs. plenary vs. invited).

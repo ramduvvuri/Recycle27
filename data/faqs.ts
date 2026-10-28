@@ -1,6 +1,6 @@
 // =============================================================================
 // /data/faqs.ts — Authoritative Frequently Asked Questions
-// Comprehensive information across all official ReCYCLE 2027 conference topics.
+// Comprehensive information across all official RECYCLE 2027 conference topics.
 // =============================================================================
 
 export interface FAQ {
@@ -14,21 +14,21 @@ export const faqs: FAQ[] = [
   // ── General ─────────────────────────────────────────────────────────────
   {
     id: "gen-1",
-    question: "What is ReCYCLE 2027?",
+    question: "What is RECYCLE 2027?",
     answer:
-      "ReCYCLE 2027 is the 6th International Conference on Waste Management, organized by the Waste Management Research Group (WMRG) and School of Agro and Rural Technology (SART) at IIT Guwahati in association with AWSAR Society. It serves as a premier international platform bringing together researchers, engineers, industry practitioners, and policymakers to discuss scientific innovations, technological solutions, and policy frameworks for sustainable waste management and circular economy.",
+      "RECYCLE 2027 is the 6th International Conference on Waste Management, organized by the Waste Management Research Group (WMRG) and School of Agro and Rural Technology (SART) at IIT Guwahati in association with AWSAR Society. It serves as a premier international platform bringing together researchers, engineers, industry practitioners, and policymakers to discuss scientific innovations, technological solutions, and policy frameworks for sustainable waste management and circular economy.",
     category: "General",
   },
   {
     id: "gen-2",
     question: "When and where will the conference be held?",
     answer:
-      "ReCYCLE 2027 will take place on 20 – 21 May 2027 at the Conference Centre, Indian Institute of Technology Guwahati, Guwahati, Assam, India (PIN: 781039).",
+      "RECYCLE 2027 will take place on 20 – 21 May 2027 at the Conference Centre, Indian Institute of Technology Guwahati, Guwahati, Assam, India (PIN: 781039).",
     category: "General",
   },
   {
     id: "gen-3",
-    question: "What is the overarching theme of ReCYCLE 2027?",
+    question: "What is the overarching theme of RECYCLE 2027?",
     answer:
       "The official theme is 'Innovative Solutions for a Cleaner, Healthier and More Sustainable Future', covering eight interconnected domains spanning solid waste, agro-waste, wastewater, circular economy, digital technologies, climate resilience, and public health.",
     category: "General",
@@ -88,7 +88,7 @@ export const faqs: FAQ[] = [
   // ── Registration ────────────────────────────────────────────────────────
   {
     id: "reg-1",
-    question: "What are the registration fees for ReCYCLE 2027?",
+    question: "What are the registration fees for RECYCLE 2027?",
     answer:
       "Registration fees for Indian Nationals: Faculty Members and Postdoctoral Fellows: INR 7,500/- + 18% GST (INR 8,850 total); Research Scholars (PhD / JRF / SRF): INR 5,500/- + 18% GST (INR 6,490 total); Students (MTech / BTech / MSc / BSc): INR 3,500/- + 18% GST (INR 4,130 total). Foreign Nationals: 150 USD (all-inclusive).",
     category: "Registration",
@@ -148,7 +148,7 @@ export const faqs: FAQ[] = [
     id: "prg-4",
     question: "Is online / virtual presentation supported?",
     answer:
-      "ReCYCLE 2027 is structured as an in-person academic and industrial convention at the IIT Guwahati Conference Centre. Hybrid or virtual presentation slots may only be considered on a case-by-case basis under extraordinary circumstances with prior written approval from the Convenors.",
+      "RECYCLE 2027 is structured as an in-person academic and industrial convention at the IIT Guwahati Conference Centre. Hybrid or virtual presentation slots may only be considered on a case-by-case basis under extraordinary circumstances with prior written approval from the Convenors.",
     category: "Programme",
   },
 
@@ -187,7 +187,7 @@ export const faqs: FAQ[] = [
     id: "pub-1",
     question: "Will presented papers be published in indexed journals or proceedings?",
     answer:
-      "Yes. All accepted abstracts will be published in the official ReCYCLE 2027 Conference Proceedings with an assigned ISBN. Furthermore, selected high-impact full manuscripts will be invited for peer review and published in dedicated Special Issues of reputed Scopus/SCI-indexed environmental engineering journals and edited Springer/Elsevier book volumes.",
+      "Yes. All accepted abstracts will be published in the official RECYCLE 2027 Conference Proceedings with an assigned ISBN. Furthermore, selected high-impact full manuscripts will be invited for peer review and published in dedicated Special Issues of reputed Scopus/SCI-indexed environmental engineering journals and edited Springer/Elsevier book volumes.",
     category: "Publications & Awards",
   },
   {
@@ -210,14 +210,14 @@ export const faqs: FAQ[] = [
     id: "spn-1",
     question: "What sponsorship packages are available for industry partners?",
     answer:
-      "ReCYCLE 2027 offers multiple corporate partnership packages: Platinum Partner, Gold Partner, Silver Partner, Bronze Partner, and Session / Banquet Sponsorship. Entitlements include prominent logo branding across website and print materials, complimentary delegate passes, prime exhibition stall space at the Conference Centre, and presentation opportunities during the dedicated Industry Session.",
+      "RECYCLE 2027 offers multiple corporate partnership packages: Platinum Partner, Gold Partner, Silver Partner, Bronze Partner, and Session / Banquet Sponsorship. Entitlements include prominent logo branding across website and print materials, complimentary delegate passes, prime exhibition stall space at the Conference Centre, and presentation opportunities during the dedicated Industry Session.",
     category: "Sponsorship",
   },
   {
     id: "spn-2",
     question: "How can our organization secure an exhibition stall?",
     answer:
-      "Exhibition space is allocated in the main foyer of the Conference Centre. Organizations interested in showcasing waste management machinery, sensing technologies, recycling systems, or consulting solutions should email recycle2k27@iitg.ac.in with the subject 'ReCYCLE 2027 Exhibition Stall Request'.",
+      "Exhibition space is allocated in the main foyer of the Conference Centre. Organizations interested in showcasing waste management machinery, sensing technologies, recycling systems, or consulting solutions should email recycle2k27@iitg.ac.in with the subject 'RECYCLE 2027 Exhibition Stall Request'.",
     category: "Sponsorship",
   },
 ];

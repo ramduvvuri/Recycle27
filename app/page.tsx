@@ -52,7 +52,7 @@ export default function Home() {
         <ScrollParallax speed={0.03} max={8} className="lg:hidden absolute inset-0 pointer-events-none z-0">
           <Image 
             src="/images/heroes/hero-combined-bg.png" 
-            alt="ReCYCLE 2027" 
+            alt="RECYCLE 2027" 
             fill 
             className="w-full h-full object-cover object-right" 
             sizes="100vw"
@@ -87,7 +87,7 @@ export default function Home() {
               className="font-display text-[#113224] leading-[1.02] tracking-[-.01em]"
             >
               <span className="block text-[42px] min-[375px]:text-[48px] sm:text-[55px] md:text-[73px] lg:text-[80px] xl:text-[92px] mb-0 font-medium whitespace-nowrap tracking-tight">
-                ReCYCLE 2027
+                RECYCLE 2027
               </span>
               <span className="block text-[22px] min-[375px]:text-[24px] sm:text-[26px] md:text-[33px] lg:text-[37px] xl:text-[42px] text-[#2C4D41] font-normal mt-1.5 leading-[1.15]">
                 <span className="block whitespace-nowrap min-[320px]:whitespace-normal sm:whitespace-nowrap">6<sup className="text-[0.6em]">th</sup> International Conference</span>
@@ -624,7 +624,7 @@ export default function Home() {
               <FAQList items={[
                 { question: "Who can participate in RECYCLE27?", answer: "Researchers, practitioners, policymakers and students working towards sustainable systems are welcome." },
                 { question: "Where can I find abstract guidelines?", answer: "Abstract guidelines and submission details will be announced soon. Please check the Call for Abstracts page." },
-                { question: "Where will the conference take place?", answer: "ReCYCLE 2027 will be held on 20 – 21 May 2027 at the Conference Centre, Indian Institute of Technology Guwahati, Assam, India." },
+                { question: "Where will the conference take place?", answer: "RECYCLE 2027 will be held on 20 – 21 May 2027 at the Conference Centre, Indian Institute of Technology Guwahati, Assam, India." },
               ]} />
             </Reveal>
 

@@ -15,7 +15,7 @@ export interface RegistrationFee {
 }
 
 /**
- * Registration fees for ReCYCLE 2027.
+ * Registration fees for RECYCLE 2027.
  * Source: Official conference fee schedule supplied by organizers.
  *
  * IMPORTANT: GST amounts must NOT be calculated and merged into the base fee.

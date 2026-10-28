@@ -1,7 +1,7 @@
 # AI Usage
 
 ## Purpose
-AI assistance was used during the planning and development phases of the ReCYCLE 2027 project. This document serves as a forensic record of AI involvement as established by the repository contents.
+AI assistance was used during the planning and development phases of the RECYCLE 2027 project. This document serves as a forensic record of AI involvement as established by the repository contents.
 
 ## Development Assistance
 - **Models used:** Gemini, Claude (evidence found in `GEMINI-HANDOFF.md` and `CLAUDE.md`).

@@ -9,7 +9,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Let's connect"
         title="Contact Us"
-        description="We're here to help. Reach out to us for any queries related to ReCYCLE 2027. We look forward to hearing from you."
+        description="We're here to help. Reach out to us for any queries related to RECYCLE 2027. We look forward to hearing from you."
         pageKey="contact"
         sideText={["PEOPLE", "IDEAS", "SOLUTIONS", "A CLEANER", "TOMORROW"]}
       />

@@ -9,7 +9,7 @@ export default function FAQsPage() {
       <PageHero
         eyebrow="Questions · clarity · a cleaner tomorrow"
         title="Frequently Asked Questions"
-        description="Find answers to common queries about ReCYCLE 2027. Still have a question? Feel free to reach out to us."
+        description="Find answers to common queries about RECYCLE 2027. Still have a question? Feel free to reach out to us."
         pageKey="faqs"
       />
       <Breadcrumb items={[{ label: "FAQs" }]} />

@@ -2,7 +2,7 @@
 
 | Document Field | Location in Codebase | Source of Truth |
 | --- | --- | --- |
-| Conference Name | `data/conference.ts`, `app/page.tsx` | 6th International Conference on Waste Management (ReCYCLE 2027) |
+| Conference Name | `data/conference.ts`, `app/page.tsx` | 6th International Conference on Waste Management (RECYCLE 2027) |
 | Dates | `data/conference.ts`, `app/page.tsx`, `data/importantDates.ts` | 20th and 21st May, 2027 |
 | Venue | `data/conference.ts`, `app/venue-travel/page.tsx` | Conference Centre, Indian Institute of Technology Guwahati |
 | Contact | `data/contact.ts` | recycle2k27@iitg.ac.in, recycle2k27@gmail.com, +91 9535533933 |

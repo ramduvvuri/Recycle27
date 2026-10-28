@@ -31,7 +31,7 @@ export default function ThemesPage() {
               Key Areas of Focus
             </h2>
             <p className="mt-6 max-w-lg text-base leading-7 text-secondary-text">
-              ReCYCLE 2027 explores eight interconnected themes that address the pressing challenges of sustainable waste management and circular economy. Each theme represents a critical dimension of our collective journey toward a cleaner, more resilient future.
+              RECYCLE 2027 explores eight interconnected themes that address the pressing challenges of sustainable waste management and circular economy. Each theme represents a critical dimension of our collective journey toward a cleaner, more resilient future.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ export default function ThemesPage() {
 
           <div className="text-light-text/80">
             <p className="text-base leading-7">
-              These eight themes form the foundation of ReCYCLE 2027&apos;s interdisciplinary approach. By bringing together diverse perspectives from academia, industry, policy, and practice, we aim to catalyze meaningful dialogue and actionable solutions for sustainable waste management.
+              These eight themes form the foundation of RECYCLE 2027&apos;s interdisciplinary approach. By bringing together diverse perspectives from academia, industry, policy, and practice, we aim to catalyze meaningful dialogue and actionable solutions for sustainable waste management.
             </p>
           </div>
         </div>

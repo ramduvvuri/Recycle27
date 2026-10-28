@@ -1,6 +1,6 @@
-# Image Sources Register — ReCYCLE 2027
+# Image Sources Register — RECYCLE 2027
 
-This register documents the origin, verification, and licensing status of portraits used on the ReCYCLE 2027 conference website, prioritizing official institutional directories and academic profiles.
+This register documents the origin, verification, and licensing status of portraits used on the RECYCLE 2027 conference website, prioritizing official institutional directories and academic profiles.
 
 ---
 

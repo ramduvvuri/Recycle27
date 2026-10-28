@@ -1,5 +1,5 @@
 // =============================================================================
-// /data/themes.ts — Official Conference Themes for ReCYCLE 2027
+// /data/themes.ts — Official Conference Themes for RECYCLE 2027
 // Source of Truth: Themes and Tentative Schedule.docx (Eight Official Themes)
 // =============================================================================
 

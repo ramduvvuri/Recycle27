@@ -127,7 +127,7 @@ export function Navbar() {
             </div>
             <div className="flex flex-col justify-center translate-y-[1px]">
               <span className="font-display text-[17px] font-semibold leading-[1.1] text-[#163D31] group-hover:text-[#0C7A52] transition-colors">
-                ReCYCLE 2027
+                RECYCLE 2027
               </span>
               <span className="font-body text-[7.5px] font-medium leading-[1.2] text-[#163D31]/80 uppercase tracking-widest mt-[2px]">
                 6th International Conference<br />on Waste Management

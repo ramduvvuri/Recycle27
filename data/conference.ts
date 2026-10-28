@@ -32,8 +32,8 @@ export interface ConferenceInfo {
 }
 
 export const conference: ConferenceInfo = {
-  shortName: "ReCYCLE 2027",
-  fullName: "ReCYCLE 2027 (6th International Conference)",
+  shortName: "RECYCLE 2027",
+  fullName: "RECYCLE 2027 (6th International Conference)",
   conferenceTitle: "6th International Conference on Waste Management",
   edition: "6th",
   dates: "20 – 21 May 2027",

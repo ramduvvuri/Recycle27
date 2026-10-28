@@ -1,7 +1,7 @@
-# ReCYCLE 2027
+# RECYCLE 2027
 
 ## Overview
-ReCYCLE 2027 is the official website for the International Conference on Sustainable Waste Management and Circular Economy, hosted by the Waste Management Research Group (WMRG) at IIT Guwahati. 
+RECYCLE 2027 is the official website for the International Conference on Sustainable Waste Management and Circular Economy, hosted by the Waste Management Research Group (WMRG) at IIT Guwahati. 
 
 ## Conference
 The conference focuses on sustainable environmental engineering, providing an academic and institutional platform for researchers, students, and industry experts.

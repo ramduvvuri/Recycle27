@@ -17,7 +17,7 @@ export default function RegistrationPage() {
         title="Registration"
         description={
           <>
-            Secure your place at ReCYCLE 2027 and become part of a global
+            Secure your place at RECYCLE 2027 and become part of a global
             <br />community working towards a sustainable future.
           </>
         }
@@ -32,11 +32,11 @@ export default function RegistrationPage() {
           <div className="text-center mb-6">
             <EyebrowLabel label="REGISTRATION" />
             <h2 className="font-display text-4xl md:text-5xl text-dark-text leading-tight mt-4">
-              Register for ReCYCLE 2027
+              Register for RECYCLE 2027
             </h2>
             <p className="mt-6 text-sm leading-7 text-secondary-text max-w-2xl mx-auto">
               Participants from academia, industry, government and civil society are
-              invited to register for ReCYCLE 2027. Join us to exchange ideas, build
+              invited to register for RECYCLE 2027. Join us to exchange ideas, build
               collaborations and contribute to a more sustainable and circular future.
             </p>
           </div>

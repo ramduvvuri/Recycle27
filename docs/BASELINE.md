@@ -1,4 +1,4 @@
-# ReCYCLE 2027 — Baseline Record
+# RECYCLE 2027 — Baseline Record
 
 **Date:** 2026-10-02
 **Phase:** 0 (Pre-Cleanup Freeze)

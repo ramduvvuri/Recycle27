@@ -10,7 +10,7 @@ const photo = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit
 const items = [
   {
     title: "Inaugural Ceremony",
-    category: "ReCYCLE 2026",
+    category: "RECYCLE 2026",
     id: "photo-1540575467063-178a50c2df87",
     span: "col-span-1 sm:col-span-2 lg:col-span-2",
   },

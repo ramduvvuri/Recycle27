@@ -1,7 +1,7 @@
 # Deployment Documentation
 
 ## Hosting
-The ReCYCLE 2027 website is a Next.js application that compiles into a statically generated site with a single Server Action (for the contact form). 
+The RECYCLE 2027 website is a Next.js application that compiles into a statically generated site with a single Server Action (for the contact form). 
 **Recommended Hosting:** Vercel
 
 ## Environment Variables

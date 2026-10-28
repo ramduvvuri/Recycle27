@@ -1,4 +1,4 @@
-# ReCYCLE 2027 — Production Cleanup
+# RECYCLE 2027 — Production Cleanup
 
 ## Final Production Repository Cleanup & Developer Handoff
 

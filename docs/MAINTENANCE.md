@@ -1,6 +1,6 @@
 # Maintenance Guide
 
-This document explains how to safely update content for ReCYCLE 2027 without modifying code or breaking the layout. 
+This document explains how to safely update content for RECYCLE 2027 without modifying code or breaking the layout. 
 
 ## Updating Conference Details
 All data lives inside the `data/` directory.

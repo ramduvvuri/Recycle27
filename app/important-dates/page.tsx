@@ -50,7 +50,7 @@ export default function ImportantDatesPage() {
               Important Dates
             </h2>
             <p className="mt-6 max-w-lg text-base leading-7 text-secondary-text">
-              Stay informed about key milestones for abstract submission, registration, and the conference schedule. Mark your calendar and plan your participation in ReCYCLE 2027.
+              Stay informed about key milestones for abstract submission, registration, and the conference schedule. Mark your calendar and plan your participation in RECYCLE 2027.
             </p>
           </div>
 
@@ -163,7 +163,7 @@ export default function ImportantDatesPage() {
                   Stay Informed
                 </h2>
                 <p className="text-base leading-7 text-light-text/80 mb-8 max-w-2xl">
-                  For the latest updates on ReCYCLE 2027, keep checking this page or contact us at recycle2k27@iitg.ac.in.
+                  For the latest updates on RECYCLE 2027, keep checking this page or contact us at recycle2k27@iitg.ac.in.
                 </p>
                 <Button href="/contact" variant="secondary-light" showArrow className="px-8 py-4">
                   Contact Us
