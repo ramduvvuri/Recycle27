@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight, FileText, FlaskConical, Globe2, Landmark, Sprout, UsersRound } from "lucide-react";
-import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 
 const campus = "/images/about/recycle_about.jpeg";
@@ -17,9 +16,7 @@ const ButtonLink = ({ href, children, dark = false }: { href: string; children: 
 
 export default function AboutPage() {
   return (
-    <>
-      <Breadcrumb items={[{ label: "About" }]} />
-
+    <div className="pt-[76px] sm:pt-[84px] md:pt-[88px]">
       {/* 1. About RECYCLE 2027 */}
       <section className="bg-soft-bg py-8 md:py-14">
         <div className="mx-auto max-w-[1400px] px-5 md:px-8 lg:px-10 xl:px-12">
@@ -196,6 +193,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -25,7 +25,7 @@ export function ContactSection() {
 
   return (
     <>
-      <SectionWrapper theme="white" spacing="compact">
+      <SectionWrapper theme="white" spacing="compact" className="pt-24 sm:pt-28 md:pt-32">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr] relative">
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-light-border -translate-x-1/2" />
 
@@ -164,7 +164,7 @@ export function ContactSection() {
       </SectionWrapper>
 
       {/* Category cards */}
-      <SectionWrapper theme="white" spacing="compact">
+      <SectionWrapper theme="white" spacing="compact" className="pt-24 sm:pt-28 md:pt-32">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {contactCategories.map(({ Icon, title, description }) => (
             <div key={title} className="bg-warm-cream border border-light-border p-8 rounded-xl">

@@ -5,7 +5,7 @@ import { SectionWrapper } from "@/components/sections/SectionWrapper";
 export function AccommodationSection() {
   return (
     <>
-      <SectionWrapper theme="white" spacing="compact">
+      <SectionWrapper theme="white" spacing="compact" className="pt-24 sm:pt-28 md:pt-32">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
           <div>
             <EyebrowLabel label="ACCOMMODATION OPTIONS" />

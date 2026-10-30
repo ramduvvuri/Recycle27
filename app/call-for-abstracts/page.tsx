@@ -1,11 +1,9 @@
-import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { AbstractsSection } from "@/components/sections/AbstractsSection";
-
-export default function CallForAbstractsPage() {
-  return (
-    <>
-      <Breadcrumb items={[{ label: "Call for Abstracts" }]} />
-      <AbstractsSection />
-    </>
-  );
+import { AbstractsSection } from "@/components/sections/AbstractsSection";
+
+export default function CallForAbstractsPage() {
+  return (
+    <div className="pt-[76px] sm:pt-[84px] md:pt-[88px]">
+<AbstractsSection />
+    </div>
+  );
 }

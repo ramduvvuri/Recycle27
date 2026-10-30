@@ -40,7 +40,7 @@ const importantDates = [
 
 export function AbstractsSection() {
   return (
-    <SectionWrapper theme="white" spacing="compact">
+    <SectionWrapper theme="white" spacing="compact" className="pt-24 sm:pt-28 md:pt-32">
       <div className="space-y-16">
         {/* 1. FIRST: Submit Your Abstract CTA Section */}
         <div id="submit-abstract" className="rounded-2xl border border-recycle-green/20 bg-soft-bg p-8 md:p-12 text-center relative overflow-hidden shadow-sm">
