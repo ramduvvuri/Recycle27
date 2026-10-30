@@ -2,26 +2,12 @@ import Image from "next/image";
 import { Users, MapPin, GraduationCap } from "lucide-react";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
-import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { advisoryCommittee, studentCommittee } from "@/data/committees";
 
 export default function CommitteesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="PEOPLE · IDEAS · COLLABORATION"
-        title="Committees"
-        description={
-          <>
-            Meet the faculty members, researchers and student organizers working
-            <br />behind RECYCLE27 to shape a meaningful and impactful conference.
-          </>
-        }
-        pageKey="committees"
-        sideText={["A", "CLEANER", "TOMORROW", "TOGETHER"]}
-      />
-
       <Breadcrumb items={[{ label: "Committees" }]} />
 
       <SectionWrapper theme="white" spacing="compact">
@@ -29,9 +15,12 @@ export default function CommitteesPage() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div className="flex-1">
             <EyebrowLabel label="ORGANIZING COMMITTEE" />
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-dark-text leading-tight mt-3">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-dark-text leading-tight mt-3 font-medium">
               Conference Leadership
-            </h2>
+            </h1>
+            <p className="mt-3 text-sm sm:text-base text-secondary-text max-w-xl">
+              Meet the faculty members, researchers and student organizers working behind RECYCLE 2027.
+            </p>
           </div>
         </div>
 

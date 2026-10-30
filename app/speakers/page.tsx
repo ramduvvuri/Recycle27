@@ -2,30 +2,24 @@ import Image from "next/image";
 import { Users } from "lucide-react";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
-import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { speakers } from "@/data/speakers";
 
 export default function SpeakersPage() {
   return (
     <>
-      <PageHero
-        eyebrow="PEOPLE · PERSPECTIVES · PARTNERSHIPS"
-        title="Tentative Speakers"
-        description="Meet tentative keynote and invited speakers shaping the future of sustainable waste management and circular economy."
-        pageKey="speakers"
-        sideText={["A", "CLEANER", "TOMORROW", "TOGETHER"]}
-      />
-
       <Breadcrumb items={[{ label: "Speakers" }]} />
 
       {/* Speakers Section */}
       <SectionWrapper theme="white" spacing="compact">
         <div className="mb-8">
           <EyebrowLabel label="TENTATIVE SPEAKERS" />
-          <h2 className="font-display text-3xl sm:text-4xl text-dark-text leading-tight mt-3">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-dark-text leading-tight mt-3 font-medium">
             Tentative Speakers
-          </h2>
+          </h1>
+          <p className="mt-3 text-sm sm:text-base text-secondary-text max-w-xl">
+            Meet tentative keynote and invited speakers shaping the future of sustainable waste management and circular economy.
+          </p>
         </div>
 
         {/* Compact speaker cards (~0.4x scale, editorial grid) */}

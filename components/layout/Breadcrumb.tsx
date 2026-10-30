@@ -19,7 +19,7 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
   );
 
   return (
-    <div className={`bg-white border-b border-light-border w-full ${className || ""}`}>
+    <div className={`bg-[#FAF8F5] border-b border-[#0C5A3D]/10 w-full pt-[68px] sm:pt-[72px] md:pt-[76px] ${className || ""}`}>
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-3">
         <nav aria-label="Breadcrumb">
           <ol className="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">

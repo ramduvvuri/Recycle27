@@ -1,24 +1,25 @@
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
-import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { themes } from "@/data/themes";
 
 export default function ThemesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="CONFERENCE THEMES"
-        title="Conference Themes"
-        description="Eight interconnected areas of focus for a more sustainable and resource-efficient future."
-        pageKey="themes"
-        sideText={["PEOPLE", "IDEAS", "SOLUTIONS", "A CLEANER", "TOMORROW"]}
-      />
-
       <Breadcrumb items={[{ label: "Themes" }]} />
 
       {/* Eight Conference Themes */}
       <SectionWrapper theme="dark" spacing="generous">
+        <div className="mb-10">
+          <EyebrowLabel theme="dark" label="CONFERENCE THEMES" />
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl text-light-text leading-tight mt-3 font-medium">
+            Conference Themes
+          </h1>
+          <p className="mt-3 text-sm sm:text-base text-light-text/70 max-w-xl">
+            Eight interconnected areas of focus for a more sustainable and resource-efficient future.
+          </p>
+        </div>
+
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {themes.map((theme) => {
             const Icon = theme.icon;
