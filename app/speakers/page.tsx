@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Users } from "lucide-react";
+import { Users, MapPin } from "lucide-react";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
 import { speakers } from "@/data/speakers";
@@ -19,46 +19,49 @@ export default function SpeakersPage() {
           </p>
         </div>
 
-        {/* 4 speakers in a row on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Speaker cards formatted like committee member cards, slightly larger */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {speakers.map((speaker) => (
             <article
               key={speaker.id}
-              className="border border-light-border rounded-xl bg-soft-bg overflow-hidden hover:shadow-lg hover:border-primary-emerald/30 transition-all flex flex-col group"
+              className="bg-soft-bg rounded-xl p-5 sm:p-6 border border-light-border flex items-start gap-4 sm:gap-5 hover:shadow-md hover:border-primary-emerald/30 transition-all duration-300 group"
             >
-              <div className="aspect-[4/4.5] relative bg-[#e7eee5] overflow-hidden">
+              <div className="relative w-24 h-28 sm:w-28 sm:h-34 rounded-lg overflow-hidden shrink-0 bg-white border border-light-border/60 shadow-sm">
                 {speaker.image ? (
                   <Image
                     src={speaker.image}
                     alt={speaker.name}
                     fill
                     className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 96px, 112px"
                   />
                 ) : (
-                  <div className="flex h-full items-center justify-center">
-                    <Users size={36} className="text-primary-emerald/30" />
+                  <div className="w-full h-full flex items-center justify-center bg-recycle-sage text-recycle-green/40">
+                    <Users size={32} />
                   </div>
                 )}
               </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="font-display text-lg text-dark-text leading-snug font-medium">
-                    {speaker.name}
-                  </h3>
-                  {speaker.title && (
-                    <p className="text-xs font-semibold text-primary-emerald mt-1">
-                      {speaker.title}
-                    </p>
-                  )}
-                  <p className="text-xs text-secondary-text mt-1.5 leading-relaxed">
+              <div className="flex-1 min-w-0">
+                <h3 className="font-display text-lg sm:text-xl text-dark-text mb-1 leading-snug font-medium group-hover:text-primary-emerald transition-colors">
+                  {speaker.name}
+                </h3>
+                {speaker.title && (
+                  <p className="text-xs sm:text-[13px] font-semibold text-primary-emerald mb-1.5 leading-tight">
+                    {speaker.title}
+                  </p>
+                )}
+                <p className="text-xs sm:text-[13px] text-secondary-text flex items-start gap-1.5 leading-relaxed">
+                  <MapPin size={13} className="shrink-0 text-primary-emerald/70 mt-0.5" />
+                  <span>
                     {speaker.department ? `${speaker.department}, ` : ""}{speaker.affiliation}
-                  </p>
-                </div>
+                  </span>
+                </p>
                 {speaker.country && (
-                  <p className="text-[11px] font-medium text-secondary-text/75 mt-3 pt-2 border-t border-light-border/60">
-                    {speaker.country}
-                  </p>
+                  <div className="mt-2.5">
+                    <span className="inline-block text-[11px] font-medium text-primary-emerald bg-primary-emerald/10 px-2.5 py-0.5 rounded-md">
+                      {speaker.country}
+                    </span>
+                  </div>
                 )}
               </div>
             </article>

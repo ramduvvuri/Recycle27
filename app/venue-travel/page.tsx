@@ -77,7 +77,7 @@ export default function VenueTravelPage() {
 
       ======================================================== */}
 
-      <SectionWrapper theme="white" spacing="normal" className="pt-24 sm:pt-28 md:pt-32">
+      <SectionWrapper theme="white" spacing="normal">
 
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.3fr] lg:items-start">
 
@@ -383,7 +383,7 @@ export default function VenueTravelPage() {
 
       ======================================================== */}
 
-      <SectionWrapper theme="white" spacing="normal" className="pt-24 sm:pt-28 md:pt-32">
+      <SectionWrapper theme="white" spacing="normal">
 
         <div>
 

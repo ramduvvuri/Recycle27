@@ -42,7 +42,7 @@ export default function RegistrationPage() {
 
     <div className="pt-[76px] sm:pt-[84px] md:pt-[88px]">
 
-<SectionWrapper theme="white" spacing="compact" className="pt-24 sm:pt-28 md:pt-32">
+<SectionWrapper theme="white" spacing="compact">
 
 
 

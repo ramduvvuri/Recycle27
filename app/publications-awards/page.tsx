@@ -15,7 +15,7 @@ export default function PublicationsAwardsPage() {
     <div className="pt-[76px] sm:pt-[84px] md:pt-[88px]">
 {/* Publication Opportunities Section */}
 
-      <SectionWrapper theme="white" spacing="compact" className="pt-24 sm:pt-28 md:pt-32">
+      <SectionWrapper theme="white" spacing="compact">
 
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
 

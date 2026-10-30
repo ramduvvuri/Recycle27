@@ -7,7 +7,7 @@ import { advisoryCommittee, studentCommittee } from "@/data/committees";
 export default function CommitteesPage() {
   return (
     <div className="pt-[76px] sm:pt-[84px] md:pt-[88px]">
-<SectionWrapper theme="white" spacing="compact" className="pt-24 sm:pt-28 md:pt-32">
+<SectionWrapper theme="white" spacing="compact">
         {/* Conference Leadership */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div className="flex-1">
