@@ -5,86 +5,46 @@ import Image from "next/image";
 import { Image as ImageIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
 
-const photo = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=80`;
-
-const items = [
+const galleryImages = [
   {
-    title: "Inaugural Ceremony",
-    category: "RECYCLE 2026",
-    id: "photo-1540575467063-178a50c2df87",
-    span: "col-span-1 sm:col-span-2 lg:col-span-2",
+    src: "/images/gallery/gallery-01.jpeg",
+    title: "Conference Plenary Hall & Delegates",
+    category: "RECYCLE Proceedings",
   },
   {
-    title: "Keynote Research Address",
+    src: "/images/gallery/gallery-02.jpeg",
+    title: "Keynote Lecture & Academic Exchange",
     category: "Plenary Track",
-    id: "photo-1503428593586-e225b39bddfe",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
   },
   {
-    title: "IIT Guwahati Academic Complex",
-    category: "Conference Venue",
-    id: "photo-1562774053-701939374585",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+    src: "/images/gallery/gallery-03.jpeg",
+    title: "Technical Paper Presentation",
+    category: "Technical Session",
   },
   {
-    title: "Poster Presentation & Discussion",
-    category: "Young Researchers",
-    id: "photo-1551836022-d5d88e9218df",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+    src: "/images/gallery/gallery-04.jpeg",
+    title: "Interactive Audience Q&A",
+    category: "Technical Session",
   },
   {
-    title: "Engaged Audience & Interactive Q&A",
-    category: "Technical Sessions",
-    id: "photo-1524178232363-1fb2b075b655",
-    span: "col-span-1 sm:col-span-2 lg:col-span-2",
+    src: "/images/gallery/gallery-05.jpeg",
+    title: "Research Scholars & Faculty Discussions",
+    category: "Research Forum",
   },
   {
-    title: "Plenary Lecture Hall",
-    category: "Special Session",
-    id: "photo-1544531585-9847b68c8c86",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+    src: "/images/gallery/gallery-06.jpeg",
+    title: "Expert Panel on Waste Management",
+    category: "Plenary Forum",
   },
   {
-    title: "Environmental Research & Analysis",
-    category: "IITG Laboratories",
-    id: "photo-1577962917302-cd874c4e31d2",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+    src: "/images/gallery/gallery-07.jpeg",
+    title: "Networking & Knowledge Sharing",
+    category: "Networking",
   },
   {
-    title: "Global Policy & Panel Discussion",
-    category: "Industry & Governance",
-    id: "photo-1475721027785-f74eccf877e2",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
-  },
-  {
-    title: "Conference Gala & Networking",
-    category: "Cultural Evening",
-    id: "photo-1511578314322-379afb476865",
-    span: "col-span-1 sm:col-span-2 lg:col-span-2",
-  },
-  {
-    title: "Serene Campus Trails",
-    category: "IIT Guwahati",
-    id: "photo-1441974231531-c6227db76b6e",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
-  },
-  {
-    title: "Circular Economy Industry Forum",
-    category: "Sustainable Tech",
-    id: "photo-1531482615713-2afd69097998",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
-  },
-  {
-    title: "Collaborative Workshop Session",
-    category: "Action Plan",
-    id: "photo-1515187029135-18ee286d815b",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
-  },
-  {
-    title: "Valedictory & Awards Banquet",
-    category: "Excellence in Waste Research",
-    id: "photo-1528605248644-14dd04022da1",
-    span: "col-span-1 sm:col-span-1 lg:col-span-1",
+    src: "/images/gallery/gallery-08.jpeg",
+    title: "Audience Engagement & Symposium Closing",
+    category: "Symposium Highlights",
   },
 ];
 
@@ -100,11 +60,11 @@ export function GallerySection() {
   const closeSlideshow = () => setIsOpen(false);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
   }, []);
 
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev === items.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
   }, []);
 
   // Keyboard navigation
@@ -144,41 +104,41 @@ export function GallerySection() {
   return (
     <>
       <SectionWrapper theme="white" spacing="compact">
-        {/* Filter bar (reduced to just slideshow toggle) */}
+        {/* Slideshow button */}
         <div className="flex flex-col md:flex-row md:justify-end mb-6">
           <button
             onClick={() => openSlideshow(0)}
-            className="flex items-center gap-2 border border-light-border bg-white px-5 py-2.5 text-sm text-dark-text hover:bg-soft-bg rounded-sm transition-colors whitespace-nowrap self-start md:self-auto shadow-sm"
+            className="flex items-center gap-2 border border-light-border bg-white px-5 py-2.5 text-sm text-dark-text hover:bg-soft-bg rounded-md transition-colors whitespace-nowrap self-start md:self-auto shadow-sm cursor-pointer"
           >
             <ImageIcon size={16} className="text-secondary-text" />
-            View Slideshow ({items.length} Photos) &rarr;
+            View Slideshow ({galleryImages.length} Photos) &rarr;
           </button>
         </div>
 
-        {/* Balanced gapless grid: uniform row height so all slots align perfectly without gaps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {items.map((item, i) => (
+        {/* Seamless 4-col x 2-row zero-gap grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-0 overflow-hidden rounded-xl border border-light-border shadow-sm">
+          {galleryImages.map((item, i) => (
             <article
               key={i}
               onClick={() => openSlideshow(i)}
-              className={`relative overflow-hidden rounded-xl ${item.span} h-[240px] sm:h-[280px] lg:h-[300px] w-full group cursor-pointer bg-soft-bg shadow-sm border border-light-border/40`}
+              className="relative overflow-hidden h-[220px] sm:h-[260px] md:h-[280px] lg:h-[310px] w-full group cursor-pointer bg-soft-bg border-[0.5px] border-white/20"
             >
               <Image
-                src={photo(item.id)}
+                src={item.src}
                 fill
-                sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
+                sizes="(max-width:640px) 50vw, (max-width:1024px) 50vw, 25vw"
                 alt={item.title}
                 className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              {/* Subtle permanent bottom gradient for readability + enhanced dark on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/85 group-hover:via-black/30" />
+              {/* Permanent bottom gradient + enhanced on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300 group-hover:from-black/90 group-hover:via-black/35" />
               
-              <div className="absolute inset-x-0 bottom-0 p-5 text-white flex justify-between items-end transition-all duration-300">
-                <div className="pr-3">
-                  <span className="inline-block text-[11px] font-semibold uppercase tracking-wider text-[#9be3c6] bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm mb-1.5">
+              <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 text-white flex justify-between items-end transition-all duration-300">
+                <div className="pr-2">
+                  <span className="inline-block text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-[#9be3c6] bg-black/50 px-2 py-0.5 rounded backdrop-blur-sm mb-1.5">
                     {item.category}
                   </span>
-                  <strong className="block text-[15px] font-medium leading-snug tracking-tight text-white drop-shadow-sm">
+                  <strong className="block text-[13px] sm:text-[14px] lg:text-[15px] font-medium leading-snug tracking-tight text-white drop-shadow-sm line-clamp-2">
                     {item.title}
                   </strong>
                 </div>
@@ -196,7 +156,7 @@ export function GallerySection() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#111816]/95 backdrop-blur-md">
           <button
             onClick={closeSlideshow}
-            className="absolute top-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+            className="absolute top-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 cursor-pointer"
             aria-label="Close slideshow"
           >
             <X size={24} />
@@ -204,7 +164,7 @@ export function GallerySection() {
 
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 z-50 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+            className="absolute left-4 top-1/2 z-50 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 cursor-pointer"
             aria-label="Previous image"
           >
             <ChevronLeft size={24} />
@@ -212,7 +172,7 @@ export function GallerySection() {
 
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 z-50 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+            className="absolute right-4 top-1/2 z-50 hidden md:flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 cursor-pointer"
             aria-label="Next image"
           >
             <ChevronRight size={24} />
@@ -226,8 +186,8 @@ export function GallerySection() {
           >
             <div className="relative w-full h-full max-h-[75vh]">
               <Image
-                src={photo(items[currentIndex].id)}
-                alt={items[currentIndex].title}
+                src={galleryImages[currentIndex].src}
+                alt={galleryImages[currentIndex].title}
                 fill
                 className="object-contain"
                 sizes="100vw"
@@ -235,10 +195,10 @@ export function GallerySection() {
               />
             </div>
             <div className="mt-6 text-center">
-              <h3 className="font-display text-xl text-white md:text-2xl">{items[currentIndex].title}</h3>
-              <p className="mt-1 text-sm text-white/70">{items[currentIndex].category}</p>
+              <h3 className="font-display text-xl text-white md:text-2xl">{galleryImages[currentIndex].title}</h3>
+              <p className="mt-1 text-sm text-white/70">{galleryImages[currentIndex].category}</p>
               <p className="mt-2 text-xs text-white/40 tracking-wider">
-                {currentIndex + 1} / {items.length}
+                {currentIndex + 1} / {galleryImages.length}
               </p>
             </div>
           </div>

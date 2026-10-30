@@ -1,7 +1,6 @@
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { FinalCTA } from "@/components/shared/FinalCTA";
 
 export default function ContactPage() {
   return (
@@ -15,7 +14,6 @@ export default function ContactPage() {
       />
       <Breadcrumb items={[{ label: "Contact" }]} />
       <ContactSection />
-      <FinalCTA />
     </>
   );
 }

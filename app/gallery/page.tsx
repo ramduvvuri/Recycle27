@@ -1,7 +1,6 @@
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { GallerySection } from "@/components/sections/GallerySection";
-import { FinalCTA } from "@/components/shared/FinalCTA";
 import { conference } from "@/data/conference";
 
 export default function GalleryPage() {
@@ -16,7 +15,6 @@ export default function GalleryPage() {
       />
       <Breadcrumb items={[{ label: "Gallery" }]} />
       <GallerySection />
-      <FinalCTA />
     </>
   );
 }

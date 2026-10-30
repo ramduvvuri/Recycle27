@@ -1,4 +1,4 @@
-import { FileText, User, Search, Download, ExternalLink } from "lucide-react";
+import { FileText, User, Search, Download } from "lucide-react";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
 import { Button } from "@/components/ui/Button";
@@ -42,7 +42,45 @@ export function AbstractsSection() {
   return (
     <SectionWrapper theme="white" spacing="compact">
       <div className="space-y-16">
-        {/* Top: Guidelines and Important Dates */}
+        {/* 1. FIRST: Submit Your Abstract CTA Section */}
+        <div id="submit-abstract" className="rounded-2xl border border-recycle-green/20 bg-soft-bg p-8 md:p-12 text-center relative overflow-hidden shadow-sm">
+          <div className="max-w-2xl mx-auto flex flex-col items-center">
+            <EyebrowLabel label="SUBMIT YOUR ABSTRACT" />
+            <h2 className="mt-3 font-display text-3xl md:text-4xl text-dark-text leading-tight">
+              Submit Your Abstract
+            </h2>
+            <p className="mt-4 text-sm md:text-base leading-relaxed text-secondary-text">
+              Authors should complete the official submission form and use the supplied Microsoft Word abstract format. Please download the template below to format your document prior to submitting.
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+              {/* Option A — Submit Abstract (Primary action) */}
+              <Button
+                href="https://forms.gle/4eU138P4ADZpaCva7"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                showArrow
+                className="w-full sm:w-auto px-8 py-3.5 shadow-sm"
+              >
+                Submit Abstract
+              </Button>
+
+              {/* Option B — Download Abstract Format (Secondary action) */}
+              <Button
+                href="/downloads/abstract-format.docx"
+                download="abstract-format.docx"
+                variant="secondary"
+                icon={<Download size={16} />}
+                className="w-full sm:w-auto px-8 py-3.5"
+              >
+                Download Abstract Format
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* 2. SECOND: Guidelines and Important Dates */}
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr] relative">
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-light-border -translate-x-1/2" />
 
@@ -104,47 +142,6 @@ export function AbstractsSection() {
           </div>
         </div>
 
-        {/* Bottom: Submit Your Abstract CTA Section */}
-        <div id="submit-abstract" className="rounded-2xl border border-recycle-green/20 bg-soft-bg p-8 md:p-12 text-center relative overflow-hidden shadow-sm">
-          <div className="max-w-2xl mx-auto flex flex-col items-center">
-            <EyebrowLabel label="SUBMIT YOUR ABSTRACT" />
-            <h2 className="mt-3 font-display text-3xl md:text-4xl text-dark-text leading-tight">
-              Submit Your Abstract
-            </h2>
-            <p className="mt-4 text-sm md:text-base leading-relaxed text-secondary-text">
-              Authors should complete the official submission form and use the supplied Microsoft Word abstract format. Please download the template below to format your document prior to submitting.
-            </p>
-
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              {/* Option A — Submit Abstract (Primary action) */}
-              <Button
-                href="https://forms.gle/4eU138P4ADZpaCva7"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="primary"
-                showArrow
-                className="w-full sm:w-auto px-8 py-3.5 shadow-sm"
-              >
-                Submit Abstract
-              </Button>
-
-              {/* Option B — Download Abstract Format (Secondary action) */}
-              <Button
-                href="/downloads/abstract-format.docx"
-                download="abstract-format.docx"
-                variant="secondary"
-                icon={<Download size={16} />}
-                className="w-full sm:w-auto px-8 py-3.5"
-              >
-                Download Abstract Format
-              </Button>
-            </div>
-
-            <p className="mt-5 text-xs text-secondary-text/80">
-              Official Microsoft Word document template (.docx) · Deadline: 31st January 2027
-            </p>
-          </div>
-        </div>
       </div>
     </SectionWrapper>
   );

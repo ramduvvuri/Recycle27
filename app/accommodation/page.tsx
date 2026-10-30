@@ -1,7 +1,6 @@
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { AccommodationSection } from "@/components/sections/AccommodationSection";
-import { FinalCTA } from "@/components/shared/FinalCTA";
 
 export default function AccommodationPage() {
   return (
@@ -15,7 +14,6 @@ export default function AccommodationPage() {
       />
       <Breadcrumb items={[{ label: "Accommodation" }]} />
       <AccommodationSection />
-      <FinalCTA />
     </>
   );
 }

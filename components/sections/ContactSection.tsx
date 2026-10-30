@@ -7,26 +7,6 @@ import { SectionWrapper } from "@/components/sections/SectionWrapper";
 import type { ActionResult } from "@/types";
 import { contactInfo } from "@/data/contact";
 
-// Transform centralized contact info into section format
-const contactDetails = [
-  { Icon: Mail, label: "Email", value: contactInfo.emails.join("\n") },
-  {
-    Icon: Phone,
-    label: "Phone",
-    value: contactInfo.phones.join("\n"),
-  },
-  {
-    Icon: MapPin,
-    label: "Address",
-    value: `${contactInfo.address.line1}\n${contactInfo.address.line2}\n${contactInfo.address.city}, ${contactInfo.address.state} ${contactInfo.address.pincode}, ${contactInfo.address.country}`,
-  },
-  {
-    Icon: CalendarDays,
-    label: "Conference Secretariat Hours",
-    value: "Monday – Friday\n10:00 AM – 5:00 PM (IST)",
-  },
-];
-
 const contactCategories = [
   { Icon: Users, title: "Registration Support", description: "Assistance with registration and payments." },
   { Icon: FileText, title: "Abstract Submission", description: "Queries related to abstract guidelines and submission." },
@@ -57,17 +37,68 @@ export function ContactSection() {
               questions, please use the details below.
             </p>
             <div className="mt-10 space-y-8">
-              {contactDetails.map(({ Icon, label, value }) => (
-                <div key={label} className="flex gap-6">
-                  <Icon size={32} className="text-primary-emerald shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-display text-2xl text-dark-text">{label}</h3>
-                    <p className="mt-2 whitespace-pre-line text-base leading-6 text-secondary-text">
-                      {value}
-                    </p>
+              {/* Emails */}
+              <div className="flex gap-6">
+                <Mail size={32} className="text-primary-emerald shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-display text-2xl text-dark-text">Email</h3>
+                  <div className="mt-2 space-y-1 text-base leading-6 text-secondary-text">
+                    {contactInfo.emails.map((email) => (
+                      <div key={email}>
+                        <a href={`mailto:${email}`} className="hover:text-primary-emerald transition-colors font-medium">
+                          {email}
+                        </a>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Phone / Coordinators */}
+              <div className="flex gap-6">
+                <Phone size={32} className="text-primary-emerald shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-display text-2xl text-dark-text">Phone</h3>
+                  <div className="mt-2 space-y-1 text-base leading-6 text-secondary-text">
+                    {contactInfo.coordinators.map((c) => (
+                      <div key={c.phone} className="flex items-center gap-2">
+                        <span className="font-medium text-dark-text">{c.name}:</span>
+                        <a
+                          href={`tel:${c.phone.replace(/\s+/g, "")}`}
+                          className="hover:text-primary-emerald transition-colors"
+                        >
+                          {c.phone}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div className="flex gap-6">
+                <MapPin size={32} className="text-primary-emerald shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-display text-2xl text-dark-text">Address</h3>
+                  <p className="mt-2 text-base leading-6 text-secondary-text">
+                    {contactInfo.address.line1}<br />
+                    {contactInfo.address.line2}<br />
+                    {contactInfo.address.city}, {contactInfo.address.state} {contactInfo.address.pincode}, {contactInfo.address.country}
+                  </p>
+                </div>
+              </div>
+
+              {/* Secretariat Hours */}
+              <div className="flex gap-6">
+                <CalendarDays size={32} className="text-primary-emerald shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-display text-2xl text-dark-text">Conference Secretariat Hours</h3>
+                  <p className="mt-2 text-base leading-6 text-secondary-text">
+                    Monday – Friday<br />
+                    10:00 AM – 5:00 PM (IST)
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -123,7 +154,7 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={pending}
-                className="mt-8 w-full rounded-full bg-primary-emerald px-8 py-4 text-base font-medium text-light-text hover:bg-deep-emerald transition-colors disabled:opacity-60"
+                className="mt-8 w-full rounded-full bg-primary-emerald px-8 py-4 text-base font-medium text-light-text hover:bg-deep-emerald transition-colors disabled:opacity-60 cursor-pointer"
               >
                 {pending ? "Sending…" : "Send Message →"}
               </button>
@@ -138,8 +169,8 @@ export function ContactSection() {
           {contactCategories.map(({ Icon, title, description }) => (
             <div key={title} className="bg-warm-cream border border-light-border p-8 rounded-xl">
               <Icon size={32} className="text-primary-emerald" />
-              <h3 className="mt-8 font-display text-2xl text-dark-text">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-secondary-text">{description}</p>
+              <h3 className="font-display text-xl text-dark-text mt-4 mb-2">{title}</h3>
+              <p className="text-sm leading-6 text-secondary-text">{description}</p>
             </div>
           ))}
         </div>

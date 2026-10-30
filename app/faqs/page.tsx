@@ -1,7 +1,6 @@
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { FAQsSection } from "@/components/sections/FAQsSection";
-import { FinalCTA } from "@/components/shared/FinalCTA";
 
 export default function FAQsPage() {
   return (
@@ -14,7 +13,6 @@ export default function FAQsPage() {
       />
       <Breadcrumb items={[{ label: "FAQs" }]} />
       <FAQsSection />
-      <FinalCTA />
     </>
   );
 }

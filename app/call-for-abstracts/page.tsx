@@ -1,7 +1,6 @@
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { AbstractsSection } from "@/components/sections/AbstractsSection";
-import { FinalCTA } from "@/components/shared/FinalCTA";
 import { Button } from "@/components/ui/Button";
 import { Download } from "lucide-react";
 
@@ -39,7 +38,6 @@ export default function Page() {
       </PageHero>
       <Breadcrumb items={[{ label: "Call for Abstracts" }]} />
       <AbstractsSection />
-      <FinalCTA />
     </>
   );
 }

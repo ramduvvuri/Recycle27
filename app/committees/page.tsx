@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { Users, GraduationCap, MapPin } from "lucide-react";
+import { Users, MapPin, GraduationCap } from "lucide-react";
 import { EyebrowLabel } from "@/components/ui/EyebrowLabel";
 import { SectionWrapper } from "@/components/sections/SectionWrapper";
 import { PageHero } from "@/components/shared/PageHero";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { FinalCTA } from "@/components/shared/FinalCTA";
-import { advisoryCommittee } from "@/data/committees";
+import { advisoryCommittee, studentCommittee } from "@/data/committees";
 
 export default function CommitteesPage() {
   return (
@@ -15,7 +14,7 @@ export default function CommitteesPage() {
         title="Committees"
         description={
           <>
-            Meet the researchers, faculty members and professionals working
+            Meet the faculty members, researchers and student organizers working
             <br />behind RECYCLE27 to shape a meaningful and impactful conference.
           </>
         }
@@ -26,17 +25,17 @@ export default function CommitteesPage() {
       <Breadcrumb items={[{ label: "Committees" }]} />
 
       <SectionWrapper theme="white" spacing="compact">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+        {/* Conference Leadership */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div className="flex-1">
-            <EyebrowLabel label="ADVISORY COMMITTEE" />
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-dark-text leading-tight mt-4">
-              Our Advisory Committee
+            <EyebrowLabel label="ORGANIZING COMMITTEE" />
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-dark-text leading-tight mt-3">
+              Conference Leadership
             </h2>
           </div>
         </div>
 
-        <div className="space-y-16">
-          
+        <div className="space-y-14">
           {/* Core Roles: Patron, Chairman, Convenor */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Patron */}
@@ -141,48 +140,103 @@ export default function CommitteesPage() {
 
           <div className="h-px bg-light-border w-full" />
 
-          {/* International Members */}
+          {/* Student Organizing Team */}
           <div>
-            <h3 className="font-display text-2xl text-dark-text mb-8">International Members</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {advisoryCommittee.internationalMembers.map((member) => (
-                <div key={member.id} className="flex items-start gap-3 p-4 rounded-lg hover:bg-soft-bg transition-colors">
-                  <div className="w-8 h-8 rounded-full bg-primary-emerald/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <GraduationCap size={16} className="text-primary-emerald" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-dark-text text-[15px]">{member.name}</h4>
-                    <p className="text-[13px] text-secondary-text mt-1 leading-snug">{member.affiliation}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="mb-8">
+              <EyebrowLabel label="STUDENT ORGANIZING TEAM" />
+              <h3 className="font-display text-3xl md:text-4xl text-dark-text leading-tight mt-3">
+                Student Organizing Committee
+              </h3>
             </div>
-          </div>
 
-          <div className="h-px bg-light-border w-full" />
+            {/* Core Organizing Members */}
+            <div className="mb-10">
+              <h4 className="font-display text-xl text-primary-emerald mb-5 pb-2 border-b border-primary-emerald/20">
+                Core Organizing Members
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {studentCommittee.coreMembers.map((student) => (
+                  <div
+                    key={student.id}
+                    className="bg-soft-bg rounded-xl p-5 border border-light-border flex items-start gap-4 hover:shadow-md hover:border-primary-emerald/30 transition-all"
+                  >
+                    <div className="relative w-20 h-24 sm:w-22 sm:h-26 rounded-lg overflow-hidden shrink-0 bg-white border border-light-border/60 shadow-sm">
+                      {student.image ? (
+                        <Image
+                          src={student.image}
+                          alt={student.name}
+                          fill
+                          className="object-cover object-top"
+                          sizes="88px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-recycle-sage text-recycle-green/40">
+                          <GraduationCap size={28} />
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h5 className="font-display text-base text-dark-text mb-1 leading-snug font-medium">
+                        {student.name}
+                      </h5>
+                      <p className="text-[11.5px] font-semibold text-primary-emerald mb-1 leading-tight">
+                        {student.role}
+                      </p>
+                      <p className="text-[11.5px] text-secondary-text flex items-center gap-1">
+                        <MapPin size={11} className="shrink-0 text-primary-emerald/70" />
+                        <span className="truncate">{student.affiliation}</span>
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-          {/* National Members */}
-          <div>
-            <h3 className="font-display text-2xl text-dark-text mb-8">National Members</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {advisoryCommittee.nationalMembers.map((member) => (
-                <div key={member.id} className="flex items-start gap-3 p-4 rounded-lg hover:bg-soft-bg transition-colors">
-                  <div className="w-8 h-8 rounded-full bg-primary-emerald/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <Users size={16} className="text-primary-emerald" />
+            {/* Other Organizing Members */}
+            <div>
+              <h4 className="font-display text-xl text-primary-emerald mb-5 pb-2 border-b border-primary-emerald/20">
+                Other Organizing Members
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {studentCommittee.otherMembers.map((student) => (
+                  <div
+                    key={student.id}
+                    className="bg-soft-bg rounded-lg p-3.5 border border-light-border flex items-start gap-3 hover:shadow-sm hover:border-primary-emerald/30 transition-all"
+                  >
+                    <div className="relative w-14 h-16 rounded-md overflow-hidden shrink-0 bg-white border border-light-border/50 shadow-sm">
+                      {student.image ? (
+                        <Image
+                          src={student.image}
+                          alt={student.name}
+                          fill
+                          className="object-cover object-top"
+                          sizes="64px"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-recycle-sage text-recycle-green/40">
+                          <GraduationCap size={20} />
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h5 className="font-display text-[13.5px] text-dark-text mb-0.5 leading-snug font-medium truncate">
+                        {student.name}
+                      </h5>
+                      <p className="text-[10px] font-semibold text-primary-emerald mb-0.5 leading-tight">
+                        {student.role}
+                      </p>
+                      <p className="text-[10px] text-secondary-text truncate leading-tight">
+                        {student.affiliation}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-medium text-dark-text text-[15px]">{member.name}</h4>
-                    <p className="text-[13px] text-secondary-text mt-1 leading-snug">{member.affiliation}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
         </div>
       </SectionWrapper>
-
-      <FinalCTA />
     </>
   );
 }

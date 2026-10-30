@@ -1,8 +1,14 @@
 // =============================================================================
 // /data/contact.ts — Centralized contact information
-// =============================================================
+// =============================================================================
+
+export interface CoordinatorContact {
+  name: string;
+  phone: string;
+}
 
 export interface ContactInfo {
+  coordinators: CoordinatorContact[];
   phones: string[];
   emails: string[];
   address: {
@@ -17,8 +23,15 @@ export interface ContactInfo {
 }
 
 export const contactInfo: ContactInfo = {
+  coordinators: [
+    { name: "Kiran", phone: "+91 9535533933" },
+    { name: "Sagar", phone: "+91 90831 10128" },
+    { name: "Sayan", phone: "+91 86703 88688" },
+  ],
   phones: [
     "+91 9535533933",
+    "+91 90831 10128",
+    "+91 86703 88688",
   ],
   emails: [
     "recycle2k27@iitg.ac.in",
