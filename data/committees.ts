@@ -78,7 +78,7 @@ export const advisoryCommittee = {
     { id: "nat-3", name: "Prof. A.K. Nema", affiliation: "IIT Delhi" },
     { id: "nat-4", name: "Prof. B.K. Dubey", affiliation: "IIT KGP" },
     { id: "nat-5", name: "Prof. A.K. Gupta", affiliation: "IIT KGP" },
-    { id: "nat-6", name: "Prof. M.M. Ghangrekar", affiliation: "IIT KGP" },
+    { id: "nat-6", name: "Prof. M.M. Ghangrekar", affiliation: "Director, NIT Puducherry & IIT KGP" },
     { id: "nat-7", name: "Prof. Anurag Garg", affiliation: "IIT Bombay" },
     { id: "nat-8", name: "Prof. P.K. Singh", affiliation: "IIT BHU" },
     { id: "nat-9", name: "Prof. A.B. Gupta", affiliation: "MNIT Jaipur" },
@@ -195,7 +195,7 @@ export const studentCommittee = {
     },
     {
       id: "sc-aminul",
-      name: "Mr. Aminul Islam Choudhary",
+      name: "Mr. Aminul Islam Choudhury",
       role: "Organizing Member",
       affiliation: "PhD Scholar, IIT Guwahati",
       image: "/images/student-committee/mr-aminul-islam-choudhary.jpeg",
@@ -279,7 +279,7 @@ export const studentCommittee = {
     },
     {
       id: "sc-vena",
-      name: "Mr. Vena Harsha Vardhan",
+      name: "Mr. Venna Harshavardhan",
       role: "Organizing Member",
       affiliation: "M.Tech Scholar, IIT Guwahati",
       image: "/images/student-committee/mr-vena-harsha-vardhan.jpeg",
@@ -288,7 +288,25 @@ export const studentCommittee = {
 };
 
 export const advisoryCommitteeFlat: CommitteeMember[] = [
-  ...advisoryCommittee.patrons,
-  ...advisoryCommittee.chairmen,
-  ...advisoryCommittee.convenors,
-].map(member => ({ ...member, role: member.role || "Member" }));
+  {
+    id: "ac-1",
+    name: "Prof. Devendra Jalihal",
+    role: "Patron (Director, IIT Guwahati)",
+    affiliation: "IIT Guwahati",
+    image: "/images/committee/devendra-jalihal.jpg",
+  },
+  {
+    id: "ac-4",
+    name: "Prof. Ajay Kalamdhad",
+    role: "Convenor",
+    affiliation: "IIT Guwahati",
+    image: "/images/committee/ajay-kalamdhad.jpg",
+  },
+  {
+    id: "ac-5",
+    name: "Dr. Meena Khwairakpam",
+    role: "Convenor",
+    affiliation: "IIT Guwahati",
+    image: "/images/committee/meena-khwairakpam.jpg",
+  },
+];

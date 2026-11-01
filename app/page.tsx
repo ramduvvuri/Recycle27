@@ -2214,7 +2214,7 @@ export default function Home() {
 
 
 
-            <Stagger staggerDelay={0.07} delayChildren={0.05} className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 px-5 md:px-4">
+            <Stagger staggerDelay={0.07} delayChildren={0.05} className="w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-5 md:px-4">
 
 
 

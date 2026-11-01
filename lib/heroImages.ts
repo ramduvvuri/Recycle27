@@ -61,8 +61,8 @@ export const HERO_IMAGES: Record<PageHeroKey, string> = {
   // recovered materials communicate circular economy context.
   dates: "/images/heroes/imp-dates.jpg",
 
-  // Venue & Travel: IIT Guwahati campus building and greenery.
-  venue: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=85",
+  // Venue & Travel: IIT Guwahati Conference Centre.
+  venue: "/images/conference/iitg-conference-centre.jpg",
 
   // Accommodation: Calm university guesthouse / campus residence.
   accommodation: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=85",

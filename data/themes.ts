@@ -82,10 +82,10 @@ export const themes: Theme[] = [
   {
     id: 7,
     number: "07",
-    title: "Microplastics and Emerging Pollutants: Fate, Treatment, and Remediation",
-    titleMultiline: "Microplastics &\nEmerging Pollutants",
+    title: "Emerging Contaminants: Monitoring, Fate and Transport, Risk Assessment and Advanced Remediation",
+    titleMultiline: "Emerging Contaminants:\nMonitoring & Remediation",
     description:
-      "Environmental fate, toxicological impacts, analytical detection, advanced oxidation, and remediation of emerging contaminants.",
+      "Environmental monitoring, fate and transport, toxicological risk assessment, analytical detection, and advanced remediation of emerging contaminants.",
     icon: Filter,
   },
   {

@@ -70,7 +70,8 @@ export const speakers: Speaker[] = [
   {
     id: "speaker-6",
     name: "Prof. Makarand Madhao Ghangrekar",
-    department: "Civil Engineering Department",
+    title: "Director, NIT Puducherry",
+    department: "Professor, Civil Engineering Department",
     affiliation: "Indian Institute of Technology Kharagpur",
     country: "India",
     image: "/images/speakers/prof-makarand-madhao-ghangrekar.jpeg",
