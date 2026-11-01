@@ -67,23 +67,8 @@ export default function VenueTravelPage() {
             </div>
           </div>
 
-          {/* Right Column: Real IITG Conference Centre Image & Interactive Map */}
-          <div className="space-y-6">
-            <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden border border-light-border bg-gray-100 shadow-md group">
-              <Image
-                src="/images/conference/iitg-conference-centre.jpg"
-                alt="Conference Centre, Indian Institute of Technology Guwahati"
-                fill
-                priority
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 55vw"
-              />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent p-4 sm:p-5 text-white">
-                <p className="font-display text-base sm:text-lg font-medium leading-snug">Conference Centre, IIT Guwahati</p>
-                <p className="text-xs text-white/85 mt-0.5">Official In-Person Venue for RECYCLE 2027</p>
-              </div>
-            </div>
-
+          {/* Right Column: Google Maps Platform Interactive Map */}
+          <div>
             <InteractiveMap />
           </div>
         </div>

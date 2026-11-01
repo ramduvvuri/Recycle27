@@ -376,10 +376,10 @@ export function InteractiveMap() {
             </button>
 
             {/* Thumbnail Image */}
-            <div className="relative h-32 w-full overflow-hidden rounded-lg">
+            <div className="relative h-32 w-full overflow-hidden rounded-lg bg-gray-100">
               <Image
-                src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80"
-                alt="IIT Guwahati Academic Complex"
+                src="/images/conference/iitg-conference-centre.jpg"
+                alt="Conference Centre, IIT Guwahati"
                 fill
                 sizes="310px"
                 className="object-cover"
@@ -390,7 +390,7 @@ export function InteractiveMap() {
             {/* Content */}
             <div className="mt-3 px-1">
               <h4 className="font-display text-base font-semibold text-dark-text leading-snug">
-                Conference Venue
+                Conference Centre
               </h4>
               <p className="text-[11px] text-secondary-text mt-0.5">
                 Indian Institute of Technology Guwahati
